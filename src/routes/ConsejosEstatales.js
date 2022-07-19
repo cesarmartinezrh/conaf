@@ -31,7 +31,7 @@ const ActaContain = styled.div`
 `;
 
 const Text = styled.p`
-  color: var(--green);
+  color: var(--grey);
   font-weight: 600;
 `;
 
@@ -41,17 +41,19 @@ const ConsejosEstatales = () => {
       <Title isHeader>Consejos Estatales Forestales</Title>
       <Separator />
       {Estados.filter((x) => x.actas2021 || x.actas2022).map(
-        ({ id, estado, actas2022, actas2021 }) => (
+        ({ id, estado, shortname, actas2022, actas2021 }) => (
           <Collapsible key={id} title={estado}>
             <Content>
               {actas2022 !== undefined && <Year first>Actas 2022</Year>}
               {actas2022 !== undefined &&
                 actas2022.map(({ nombre, path, fecha }) => (
                   <ActaContain>
-                    <Text>{nombre}</Text>
+                    <Text>{`${nombre} realizada el ${fecha}`}</Text>
                     <Anchor
                       href={`${process.env.PUBLIC_URL.concat(path)}`}
-                      download={`Acta de la ${nombre.concat(".pdf")}`}
+                      download={`${shortname} Acta de la ${nombre} realizada el ${fecha.concat(
+                        ".pdf"
+                      )}`}
                     >
                       {<FaFilePdf />}
                     </Anchor>
@@ -61,10 +63,12 @@ const ConsejosEstatales = () => {
               {actas2021 !== undefined &&
                 actas2021.map(({ nombre, path, fecha }) => (
                   <ActaContain>
-                    <Text>{`${nombre}`}</Text>
+                    <Text>{`${nombre} realizada el ${fecha}`}</Text>
                     <Anchor
                       href={`${process.env.PUBLIC_URL.concat(path)}`}
-                      download={`Acta de la ${nombre.concat(".pdf")}`}
+                      download={`${shortname} Acta de la ${nombre} realizada el ${fecha.concat(
+                        ".pdf"
+                      )}`}
                     >
                       {<FaFilePdf />}
                     </Anchor>

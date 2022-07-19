@@ -60,8 +60,19 @@ const Th = styled.th`
 `;
 
 const ThProcess = styled(Th)`
-  border: 2px solid #ddd;
+  @media screen and (max-width: 767px) {
+    &:first-child {
+      width: 30%;
+    }
 
+    &:nth-child(2) {
+      width: 55%;
+    }
+
+    &:nth-last-child(-n + 2) {
+      width: 10%;
+    }
+  }
   &:first-child {
     width: 15%;
   }
@@ -76,14 +87,24 @@ const ThProcess = styled(Th)`
 `;
 
 const ThConcluded = styled(Th)`
-  border: 2px solid #ddd;
-
   &:first-child {
     width: 15%;
   }
 
-  &:nth-child(2) {
-    width: 45%;
+  &:nth-last-child(-n + 2) {
+    width: auto;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 767px) {
+    &:first-child {
+      width: 25%;
+    }
+
+    &:nth-last-child(-n + 2) {
+      width: auto;
+      text-align: center;
+    }
   }
 `;
 
@@ -357,16 +378,16 @@ const Table = () => {
       <Tabla>
         <Thead>
           <Tr>
-            <Title style={{ color: "var(--green)" }} colSpan={5}>
+            <Title style={{ color: "var(--green)" }} colSpan={3}>
               Concluidos
             </Title>
           </Tr>
           <Tr>
             <ThConcluded>No. ID</ThConcluded>
             <ThConcluded>Acuerdo</ThConcluded>
-            <ThConcluded>Toma del acuerdo</ThConcluded>
+            {/*<ThConcluded>Toma del acuerdo</ThConcluded>*/}
             <ThConcluded>Conclusión del acuerdo</ThConcluded>
-            <ThConcluded>Evidencia</ThConcluded>
+            {/*  <ThConcluded>Evidencia</ThConcluded>*/}
           </Tr>
         </Thead>
         <Tbody>
@@ -380,14 +401,16 @@ const Table = () => {
                   <p>{acuerdo.sesionini}</p>
                   <p>{acuerdo.fechaini}</p>
                 </TD>
+                {/* 
                 <TD>
                   <p>{acuerdo.sesionfin}</p>
                   <p>{acuerdo.fechafin}</p>
                 </TD>
                 <TD>
-                  {/* <a href="https://www.youtube.com">{acuerdo.id}</a>*/} En
+                   <a href="https://www.youtube.com">{acuerdo.id}</a> En
                   proceso.
                 </TD>
+                */}
               </Tr>
             ))}
         </Tbody>

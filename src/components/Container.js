@@ -7,6 +7,8 @@ const Contain = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 370px;
+    padding: 0 5px;
+    margin: 0;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {

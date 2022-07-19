@@ -2,6 +2,7 @@
   {
     "id": 1,
     "estado": "Aguascalientes",
+    "shortname": "AGS",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -45,6 +46,7 @@
   {
     "id": 2,
     "estado": "Baja California",
+    "shortname": "BC",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -56,6 +58,7 @@
   {
     "id": 3,
     "estado": "Baja California Sur",
+    "shortname": "BCS",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -72,6 +75,7 @@
   {
     "id": 4,
     "estado": "Campeche",
+    "shortname": "CAM",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -125,6 +129,7 @@
   {
     "id": 5,
     "estado": "Chiapas",
+    "shortname": "CHIS",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -153,6 +158,7 @@
   {
     "id": 6,
     "estado": "Chihuahua",
+    "shortname": "CHIH",
     "actas2021": [
       {
         "nombre": "172ª Sesión Ordinaria",
@@ -200,11 +206,13 @@
   },
   {
     "id": 7,
-    "estado": "Ciudad de México"
+    "estado": "Ciudad de México",
+    "shortname": "CDMX"
   },
   {
     "id": 8,
     "estado": "Coahuila",
+    "shortname": "COAH",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -226,6 +234,7 @@
   {
     "id": 9,
     "estado": "Colima",
+    "shortname": "COL",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -289,6 +298,7 @@
   {
     "id": 10,
     "estado": "Durango",
+    "shortname": "DGO",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -317,6 +327,7 @@
   {
     "id": 11,
     "estado": "Guanajuato",
+    "shortname": "GTO",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -338,6 +349,7 @@
   {
     "id": 12,
     "estado": "Guerrero",
+    "shortname": "GRO",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -359,6 +371,7 @@
   {
     "id": 13,
     "estado": "Hidalgo",
+    "shortname": "HGO",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -370,6 +383,7 @@
   {
     "id": 14,
     "estado": "Jalisco",
+    "shortname": "JAL",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -468,6 +482,7 @@
   {
     "id": 15,
     "estado": "México",
+    "shortname": "MEX",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -479,6 +494,7 @@
   {
     "id": 16,
     "estado": "Michoacán",
+    "shortname": "MICH",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -507,6 +523,7 @@
   {
     "id": 17,
     "estado": "Morelos",
+    "shortname": "MOR",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -560,6 +577,7 @@
   {
     "id": 18,
     "estado": "Nayarit",
+    "shortname": "NAY",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -583,6 +601,7 @@
   {
     "id": 19,
     "estado": "Nuevo León",
+    "shortname": "NL",
     "actas2021": [
       {
         "nombre": "182ª Sesión Ordinaria",
@@ -611,6 +630,7 @@
   {
     "id": 20,
     "estado": "Oaxaca",
+    "shortname": "OAX",
     "actas2021": [
       {
         "nombre": "1ª Sesión Extraordinaria",
@@ -627,6 +647,7 @@
   {
     "id": 21,
     "estado": "Puebla",
+    "shortname": "PUE",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -660,6 +681,7 @@
   {
     "id": 22,
     "estado": "Querétaro",
+    "shortname": "QTO",
     "actas2022": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -671,6 +693,7 @@
   {
     "id": 23,
     "estado": "Quintana Roo",
+    "shortname": "QROO",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -694,6 +717,7 @@
   {
     "id": 24,
     "estado": "San Luis Potosí",
+    "shortname": "SLP",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -737,6 +761,7 @@
   {
     "id": 25,
     "estado": "Sinaloa",
+    "shortname": "SIN",
     "actas2021": [
       {
         "nombre": "1ª Sesión Extraordinaria",
@@ -759,6 +784,7 @@
   {
     "id": 27,
     "estado": "Tabasco",
+    "shortname": "TAB",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -774,6 +800,7 @@
   {
     "id": 29,
     "estado": "Tlaxcala",
+    "shortname": "TLAX",
     "actas2022": [
       {
         "nombre": "1ª Sesión Extraordinaria",
@@ -790,6 +817,7 @@
   {
     "id": 30,
     "estado": "Veracruz",
+    "shortname": "VER",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -888,6 +916,7 @@
   {
     "id": 31,
     "estado": "Yucatán",
+    "shortname": "YUC",
     "actas2022": [
       {
         "nombre": "4ª Sesión Ordinaria",
@@ -899,6 +928,7 @@
   {
     "id": 32,
     "estado": "Zacatecas",
+    "shortname": "ZAC",
     "actas2022": [
       {
         "nombre": "1ª Sesión Ordinaria",
