@@ -53,6 +53,7 @@ const Index = () => {
     <>
       <Title id="index">
         Consejo Nacional Forestal <Light>(CONAF)</Light>
+        Esto es una prueba
       </Title>
       <Separator />
       <Wrapper>
