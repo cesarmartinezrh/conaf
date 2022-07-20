@@ -41,7 +41,7 @@ root.render(
             </Route>
           <Route path='funciones' element={<Funciones />} />
           <Route path='consejos-estatales' element={<ConsejosEstatales />} />
-          <Route path='survey' element={<Survey />} />
+          <Route path='encuesta' element={<Survey />} />
           </Route>
       </Routes> 
     </BrowserRouter>
