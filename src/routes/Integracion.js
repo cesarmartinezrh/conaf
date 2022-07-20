@@ -480,26 +480,26 @@ const Integracion = () => {
               <Collapsible size color title={"Membresía Actual 2021 - 2024"}>
                 <Container>
                   <Anchor
-                    target={"_blank"}
-                    href={
-                      "https://www.gob.mx/cms/uploads/attachment/file/665730/Convocatoria_renovaci_n_CONAF_2021-2023.pdf"
-                    }
+                    href={`${process.env.PUBLIC_URL.concat(
+                      "/documents/conaf/convocatoria2021.pdf"
+                    )}`}
+                    download={"Convocatoria 2021 - 2023 CONAF.pdf"}
                   >
                     Convocatoria
                   </Anchor>
                   <Anchor
-                    target={"_blank"}
-                    href={
-                      "https://www.gob.mx/cms/uploads/attachment/file/630436/Ampliacion_de_plazos_CONVOCATORIA_PARA_LA_RENOVACION_DEL_CONSEJO_NACIONAL.pdf"
-                    }
+                    href={`${process.env.PUBLIC_URL.concat(
+                      "/documents/conaf/ampliacion2021.pdf"
+                    )}`}
+                    download={"Ampliación de plazos de la convocatoria 2021 - 2023 CONAF.pdf"}
                   >
                     Ampliación de plazos de la convocatoria
                   </Anchor>
-                  <Anchor
-                    target={"_blank"}
-                    href={
-                      "https://www.gob.mx/cms/uploads/attachment/file/649770/Listado_de_integrantes_que_conforman_la_Membresia_del_CONAF_2021-2023.pdf"
-                    }
+                   <Anchor
+                    href={`${process.env.PUBLIC_URL.concat(
+                      "/documents/conaf/listado2021.pdf"
+                    )}`}
+                    download={"Listado de integrantes 2021 - 2023 CONAF.pdf"}
                   >
                     Listado de integrantes
                   </Anchor>
@@ -507,17 +507,25 @@ const Integracion = () => {
               </Collapsible>
               <Collapsible color size title={"2016 - 2018"}>
                 <Container>
-                  <Anchor href={"http://youtube.com"}>Convocatoria</Anchor>
                   <Anchor
-                    target={"_blank"}
-                    href={
-                      "http://www.conafor.gob.mx:8080/documentos/docs/7/6735Resultados%20Finales%20de%20la%20Renovaci%c3%b3n%20del%20Consejo%20Nacional%20Forestal%202016-2018.pdf"
-                    }
+                    href={`${process.env.PUBLIC_URL.concat(
+                      "/documents/conaf/convocatoria2016.pdf"
+                    )}`}
+                    download={"Convocatoria 2016 - 2018 CONAF.pdf"}
+                  >
+                    Convocatoria
+                  </Anchor>
+                  <Anchor
+                    href={`${process.env.PUBLIC_URL.concat(
+                      "/documents/conaf/listado2016.pdf"
+                    )}`}
+                    download={"Listado de integrantes 2016 - 2018 CONAF.pdf"}
                   >
                     Listado de integrantes
                   </Anchor>{" "}
                 </Container>
               </Collapsible>
+              {/*
               <Collapsible color size title={"2013 - 2014"}>
                 <Container>
                   <Anchor
@@ -548,6 +556,7 @@ const Integracion = () => {
                   </Anchor>
                 </Container>
               </Collapsible>
+*/}
               <Representaciones>
                 <List style={{ fontSize: "16px" }} start={7}>
                   <ListItem>Consejos Estatales</ListItem>
