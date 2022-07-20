@@ -18,6 +18,7 @@ import Integracion from './routes/Integracion'
 import Funciones from './routes/Funciones'
 import ComiteTecnico from './components/ComiteTecnico'
 import ComiteHome from './components/ComiteHome';
+import Survey from './routes/Survey';
 
 const rootElement = document.getElementById("root")
 const root = createRoot(rootElement)
@@ -40,6 +41,7 @@ root.render(
             </Route>
           <Route path='funciones' element={<Funciones />} />
           <Route path='consejos-estatales' element={<ConsejosEstatales />} />
+          <Route path='survey' element={<Survey />} />
           </Route>
       </Routes> 
     </BrowserRouter>

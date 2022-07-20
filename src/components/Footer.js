@@ -53,6 +53,7 @@ const Title = styled.h2`
 `;
 const Text = styled.p`
   color: white;
+  margin-bottom: 15px;
 
   @media screen and (min-width: 767px) and (max-width: 1023px) {
     font-size: 14px;
@@ -123,13 +124,12 @@ const Logo = styled.img.attrs({
 })`
   width: 200px;
   align-self: start;
-  
+
   @media screen and (min-width: 767px) and (max-width: 1023px) {
     width: 200px;
   }
   @media screen and (min-width: 1024px) {
-
-  padding: 30px 0 0 20px;
+    padding: 30px 0 0 20px;
     width: 300px;
   }
 `;
@@ -143,25 +143,51 @@ const Footer = () => {
           <Title>Enlaces</Title>
           <List>
             <ListItem>
-              <Anchor href="">Datos</Anchor>
+              <Anchor target={"_blank"} href="https://datos.gob.mx/">
+                Datos
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Publicaciones</Anchor>
+              <Anchor target={"_blank"} href="https://www.gob.mx/publicaciones">
+                Publicaciones
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Transparencia</Anchor>
+              <Anchor
+                target={"_blank"}
+                href="http://www.conafor.gob.mx/transparencia/transparencia.html"
+              >
+                Transparencia
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">PNT</Anchor>
+              <Anchor
+                target={"_blank"}
+                href="https://www.infomex.org.mx/gobiernofederal/home.action"
+              >
+                PNT
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">INAI</Anchor>
+              <Anchor target={"_blank"} href="http://www.inai.org.mx/">
+                INAI
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Alerta</Anchor>
+              <Anchor
+                target={"_blank"}
+                href="https://alertadores.funcionpublica.gob.mx/"
+              >
+                Alerta
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Denuncia</Anchor>
+              <Anchor
+                target={"_blank"}
+                href="https://sidec.funcionpublica.gob.mx/#!/"
+              >
+                Denuncia
+              </Anchor>
             </ListItem>
           </List>
         </Enlaces>
@@ -169,38 +195,61 @@ const Footer = () => {
           <Title>¿Qué es gob.mx?</Title>
           <Text>
             Es el portal único de trámites, información y participación
-            ciudadana.{" "}
+            ciudadana.
           </Text>
           <List>
             <ListItem>
-              <Anchor href="">Temas</Anchor>
+              <Anchor target={"_blank"} href="https://www.gob.mx/accesibilidad">
+                Declaración de Accesibilidad
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Declaración de Accesibilidad</Anchor>
+              <Anchor
+                target={"_blank"}
+                href="https://www.gob.mx/aviso_de_privacidad"
+              >
+                Aviso de privacidad
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Aviso de privacidad</Anchor>
+              <Anchor
+                target={"_blank"}
+                href="https://www.gob.mx/privacidadsimplificado"
+              >
+                Aviso de privacidad simplificado
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Aviso de privacidad simplificado</Anchor>
+              <Anchor target={"_blank"} href="https://www.gob.mx/terminos">
+                Términos y Condiciones
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Términos y Condiciones</Anchor>
+              <Anchor
+                target={"_blank"}
+                href="https://www.gob.mx/terminos#medidas-seguridad-informacion"
+              >
+                Política de seguridad
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Política de seguridad</Anchor>
+              <Anchor target={"_blank"} href="http://www.ordenjuridico.gob.mx/">
+                Marco jurídico
+              </Anchor>
             </ListItem>
             <ListItem>
-              <Anchor href="">Marco jurídico</Anchor>
-            </ListItem>
-            <ListItem>
-              <Anchor href="">Mapa de sitio</Anchor>
+              <Anchor target={"_blank"} href="https://www.gob.mx/sitemap">
+                Mapa de sitio
+              </Anchor>
             </ListItem>
           </List>
         </Portales>
         <Contacto>
           <Title>Contacto</Title>
-          Dudas e información a conafor@conafor.gob.mx
+          <p>Dudas e información a</p> 
+          <Anchor href="mailto:conaf.tecnica@conafor.gob.mx">
+            conaf.tecnica@conafor.gob.mx
+          </Anchor>
           <Text>Siguenos en:</Text>
           <IconWrapper>
             <Icon>

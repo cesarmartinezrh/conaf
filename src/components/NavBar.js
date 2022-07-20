@@ -42,7 +42,7 @@ const Lenk = styled(NavLink)`
   cursor: pointer;
   height: 100%;
   width: 100%;
-  font-size: 14px;
+  font-size: 12px;
 
   &:last-child {
     background-color: var(--wine);
@@ -64,8 +64,12 @@ const Lenk = styled(NavLink)`
     }
   }
 
-  @media screen and (min-width: 1500px) {
-    font-size: 20px;
+@media screen and (min-width: 1300px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 18px;
   }
 `;
 
