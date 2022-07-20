@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Title from '../components/Title'
+import Separator from '../components/Separator'
 
 const Container = styled.div`
   width: 100%;
@@ -19,7 +21,8 @@ const StyledFrame = styled.iframe`
 const Survey = () => {
   return (
     <>
-      <h1>Survey</h1>
+      <Title isHeader>¡Tu opinión es muy importante!</Title>
+      <Separator />
       <Container>
         <StyledFrame
           src="https://docs.google.com/forms/d/e/1FAIpQLSeTikjzIkmr2YZJOJq6qwRp-s1TDe-RbolbbPfSgqHqhS6V7Q/viewform?embedded=true"
