@@ -48,12 +48,10 @@ const Light = styled.p`
 `;
 
 const Index = () => {
-
   return (
     <>
       <Title id="index">
         Consejo Nacional Forestal <Light>(CONAF)</Light>
-        Esto es una prueba
       </Title>
       <Separator />
       <Wrapper>
@@ -67,8 +65,8 @@ const Index = () => {
           establecidos en la Ley General de Desarrollo Forestal Sustentable.
         </Description>
       </Wrapper>
-      <Reference Color={'darkgrey'} href={'#/marco-legal'}>
-        Artículo 152 de la Ley General de Desarrollo Forestal Sustentable 
+      <Reference Color={"darkgrey"} href={"#/marco-legal"}>
+        Artículo 152 de la Ley General de Desarrollo Forestal Sustentable
       </Reference>
     </>
   );
