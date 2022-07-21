@@ -41,7 +41,7 @@ const News = () => {
       <Container speed={50} pauseOnHover={true} gradientWidth={5}>
         <Tag>NUEVO!</Tag>
         <Anchor
-          href={"http://conaf.herokuapp.com/sesiones"}
+          href={"https://conaf.cnf.gob.mx/sesiones"}
           rel={"noopener"}
           target={"_blank"}
         >
