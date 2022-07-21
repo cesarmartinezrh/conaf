@@ -9,8 +9,8 @@ const Video = () => {
     <>
       <Frame
         height="315"
-        src="https://www.youtube.com/embed/Hfs6bTKe_-o"
-        title="YouTube video player"
+        src="https://www.youtube.com/embed/m__60nbDVtM"
+        title="Consejo Nacional Forestal"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
