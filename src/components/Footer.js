@@ -121,6 +121,7 @@ const DeepLine = styled.div`
 
 const Logo = styled.img.attrs({
   src: "https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg",
+  alt: 'Logo Gobierno de México'
 })`
   width: 200px;
   align-self: start;

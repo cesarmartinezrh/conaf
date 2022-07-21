@@ -132,9 +132,9 @@ const NavBar = () => {
     <>
       <DoubleBanner>
         <LogoLink to={"/"}>
-          <MainLogo src={logocnf} />
+          <MainLogo alt={'Logo CONAF'} src={logocnf} />
         </LogoLink>
-        <Logo src={logo} />
+        <Logo alt={'Logo CONAFOR'} src={logo} />
         <Burger />
       </DoubleBanner>
       <Nav>
