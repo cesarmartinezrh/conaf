@@ -87,7 +87,7 @@ const ConsejosEstatales = () => {
                 ))}
               {actas2021 !== undefined && (
                 <Header>
-                  <Year first>Sesiones 2022</Year>
+                  <Year first>Sesiones 2021</Year>
                   <Subtitle>Actas</Subtitle>
                 </Header>
               )}
