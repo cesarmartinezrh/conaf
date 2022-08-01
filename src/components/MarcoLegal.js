@@ -79,7 +79,7 @@ const MarcoLegal = () => {
         </Bold>
       {" "}se establece la composición y funcionamiento del Consejo, así como de sus Comités Técnicos.
       </Text>
-      <Reference Color={"darkgreen"} href={"/#/marco-legal"}>
+      <Reference Color={"darkgreen"} href={"/marco-legal"}>
         Artículo 1 del Reglamento del Consejo Nacional Forestal
       </Reference>
       <SecondaryLink

@@ -1519,7 +1519,9 @@ const Regulation = () => {
       <Text style={{ textAlign: "center" }}>
         Ciudad de México a 25 de noviembre de 2019
       </Text>
+      <Reference>Firmado al calce por el Presidente Suplente y Secretario Técnico del Consejo Nacional Forestal</Reference>
       <Reference>Fin del documento</Reference>
+
     </>
   );
 };

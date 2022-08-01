@@ -101,7 +101,7 @@ const Incidencia = () => {
           decisiones públicas.
         </ItemList>
       </List>
-      <Reference Color={"grey"} href={"/#/marco-legal"}>
+      <Reference Color={"grey"} href={"/marco-legal"}>
         Articulo 4 del Reglamento del Consejo Nacional Forestal
       </Reference>
       <Reference

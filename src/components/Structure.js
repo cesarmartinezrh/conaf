@@ -191,10 +191,10 @@ const Structure = () => {
           sobre las opiniones emitidas.
         </Comites>
       </GridLayout>
-      <Reference href={"/#/marco-legal"} Color={"grey"}>
+      <Reference href={"/marco-legal"} Color={"grey"}>
         Articulo 152 y 153 de la Ley General de Desarrollo Forestal Sustentable
       </Reference>
-      <Reference none href={"/#/marco-legal"} Color={"grey"}>
+      <Reference none href={"/marco-legal"} Color={"grey"}>
         Articulo 5, 6, 9, 12, 26 y 28 del Reglamento del Consejo Nacional
         Forestal
       </Reference>

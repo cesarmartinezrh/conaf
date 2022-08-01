@@ -56,7 +56,7 @@ const Index = () => {
       <Separator />
       <Wrapper>
         <Description>
-          Es un{" "}
+          Es un
           <strong>órgano de carácter consultivo y de asesoramiento</strong> en
           las materias que le señala la Ley General de Desarrollo Forestal
           Sustentable y en las que se le solicite su opinión. Funge como órgano
@@ -65,7 +65,7 @@ const Index = () => {
           establecidos en la Ley General de Desarrollo Forestal Sustentable.
         </Description>
       </Wrapper>
-      <Reference Color={"darkgrey"} href={"#/marco-legal"}>
+      <Reference Color={"darkgrey"} href={"/marco-legal"}>
         Artículo 152 de la Ley General de Desarrollo Forestal Sustentable
       </Reference>
     </>

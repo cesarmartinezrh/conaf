@@ -57,7 +57,7 @@ const Atributions = () => {
           <ListItem key={atrib.id}>{atrib.description}</ListItem>
         ))  } 
       </List>
-      <Reference Color={"grey"} href={"/#/marco-legal"}>
+      <Reference Color={"grey"} href={"/marco-legal"}>
         Articulo 4 del Reglamento del Consejo Nacional Forestal
       </Reference>
     </>
