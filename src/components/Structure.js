@@ -1,5 +1,6 @@
-import Separator from "./Separator";
+import { useState } from 'react'
 import styled from "styled-components";
+import Separator from "./Separator";
 import Header from "./Title";
 import Reference from "./Reference";
 
@@ -166,7 +167,6 @@ const Structure = () => {
             </Subtitle>
           </Card>
         </StyledStructure>
-
         <SecondStructure>
           <Second Comite Color={"darkyellow"}>
             <Title Color={"white"}>Comités Técnicos</Title>
@@ -177,7 +177,6 @@ const Structure = () => {
           <Third Color={"darkyellow"}>
             <Title Color={"white"}>Grupos de Trabajo</Title>
             <Subtitle>
-              {" "}
               Por acuerdo para agilizar la misión de opiniones
             </Subtitle>
           </Third>

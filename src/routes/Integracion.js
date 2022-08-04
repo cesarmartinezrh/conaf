@@ -423,7 +423,6 @@ const Integracion = () => {
                 Conforme a los artículos 5, 6, 7, 8, 9 y 10 del Reglamento del
                 Consejo Nacional Forestal,{" "}
                 <strong>
-                  {" "}
                   las ocho representaciones del Consejo Nacional Forestal
                 </strong>{" "}
                 se integrarán y designarán a sus Consejeros(as) de la siguiente
