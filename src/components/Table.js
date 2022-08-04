@@ -4,6 +4,9 @@ import Data from "../data/Sesiones.json";
 import { FaFilePdf } from "react-icons/fa";
 import Acuerdos from "../data/Acuerdos.json";
 import Separator from "./Separator";
+import ExportExcel from "./ExportExcel";
+import Collapsible from "./Collapsible";
+import Titulo from "./Title";
 
 const Tabla = styled.table`
   width: 100%;
@@ -178,6 +181,11 @@ const Anchor = styled.a`
   }
 `;
 
+const FreeSpace = styled.div`
+  height: 15px;
+  width: 100%;
+`;
+
 const Table = () => {
   return (
     <>
@@ -194,7 +202,7 @@ const Table = () => {
           </Thead>
           <Tbody style={{ backgroundColor: "#f2f2f2" }}>
             {table.sesions.map((data) => (
-              <Tr>
+              <Tr key={Math.random()}>
                 <Td style={{ textAlign: "center" }}>{data.name}</Td>
                 <Td style={{ textAlign: "center" }}>{data.date}</Td>
               </Tr>
@@ -204,7 +212,7 @@ const Table = () => {
       ))}
       {Data.filter((tab) => tab.id === 1).map((table) => (
         <Tabla key={table.id}>
-          <Thead>
+          <Thead >
             <Tr>
               <Title colSpan={5}>{table.title}</Title>
             </Tr>
@@ -273,135 +281,148 @@ const Table = () => {
         </Tabla>
       ))}
       <Video />
-      {Data.filter((tab) => tab.id !== 0 && tab.id !== 1).map((table) => (
-        <Tabla key={table.id}>
+      {Data.filter((tab) => tab.id !== 0 && tab.id !== 1 && tab.id !== 4).map(
+        (table) => (
+          <Collapsible key={table.id} title={table.year}>
+            <Tabla>
+              <Thead>
+                <Tr>
+                  <Title colSpan={5}>{table.title}</Title>
+                </Tr>
+                <Tr>
+                  <Th>Número</Th>
+                  <Th>Fecha</Th>
+                  <Th>Convocatoria</Th>
+                  <Th>Información de los asuntos tratados</Th>
+                  <Th>Acta de Acuerdos</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {table.sesions.map((data) => (
+                  <Tr key={data.id}>
+                    <Td>{data.name}</Td>
+                    <Td>{data.date}</Td>
+                    {data.convocatory ? (
+                      <Td>
+                        <Anchor
+                          href={`${process.env.PUBLIC_URL.concat(
+                            data.convocatory
+                          )}`}
+                          download={`Convocatoria de la ${data.name.concat(
+                            ".pdf"
+                          )}`}
+                        >
+                          {<FaFilePdf />}
+                        </Anchor>
+                      </Td>
+                    ) : (
+                      <Td>Pendiente de aprobación en próxima sesión</Td>
+                    )}
+                    {data.folder ? (
+                      <Td>
+                        <Anchor
+                          href={`${process.env.PUBLIC_URL.concat(data.folder)}`}
+                          download={`Carpeta de referencia de la ${data.name.concat(
+                            ".pdf"
+                          )}`}
+                        >
+                          {<FaFilePdf />}
+                        </Anchor>
+                      </Td>
+                    ) : (
+                      <Td>Próximamente</Td>
+                    )}
+                    {data.certificate ? (
+                      <Td>
+                        <Anchor
+                          href={`${process.env.PUBLIC_URL.concat(
+                            data.certificate
+                          )}`}
+                          download={`Acta de la ${data.name.concat(".pdf")}`}
+                        >
+                          {<FaFilePdf />}
+                        </Anchor>
+                      </Td>
+                    ) : (
+                      <Td>Pendiente de aprobación en próxima sesión</Td>
+                    )}
+                  </Tr>
+                ))}
+              </Tbody>
+            </Tabla>
+          </Collapsible>
+        )
+      )}
+      <FreeSpace />
+      <Titulo isHeader>Acuerdos del Consejo Nacional Forestal</Titulo>
+      <Separator />
+      <Collapsible title={"Acuerdos en Proceso"}>
+        <Tabla>
           <Thead>
             <Tr>
-              <Title colSpan={5}>{table.title}</Title>
+              <Title style={{ color: "var(--dark-yellow)" }} colSpan={4}>
+                En proceso
+              </Title>
             </Tr>
             <Tr>
-              <Th>Número</Th>
-              <Th>Fecha</Th>
-              <Th>Convocatoria</Th>
-              <Th>Información de los asuntos tratados</Th>
-              <Th>Acta de Acuerdos</Th>
+              <ThProcess>No. ID</ThProcess>
+              <ThProcess>Acuerdo</ThProcess>
+              <ThProcess>Toma del acuerdo</ThProcess>
+              <ThProcess colSpan={2}>Último avance</ThProcess>
             </Tr>
           </Thead>
           <Tbody>
-            {table.sesions.map((data) => (
-              <Tr key={data.id}>
-                <Td>{data.name}</Td>
-                <Td>{data.date}</Td>
-                {data.convocatory ? (
-                  <Td>
-                    <Anchor
-                      href={`${process.env.PUBLIC_URL.concat(
-                        data.convocatory
-                      )}`}
-                      download={`Convocatoria de la ${data.name.concat(
-                        ".pdf"
-                      )}`}
-                    >
-                      {<FaFilePdf />}
-                    </Anchor>
-                  </Td>
-                ) : (
-                  <Td>Pendiente de aprobación en próxima sesión</Td>
-                )}
-                {data.folder ? (
-                  <Td>
-                    <Anchor
-                      href={`${process.env.PUBLIC_URL.concat(data.folder)}`}
-                      download={`Carpeta de referencia de la ${data.name.concat(
-                        ".pdf"
-                      )}`}
-                    >
-                      {<FaFilePdf />}
-                    </Anchor>
-                  </Td>
-                ) : (
-                  <Td>Próximamente</Td>
-                )}
-                {data.certificate ? (
-                  <Td>
-                    <Anchor
-                      href={`${process.env.PUBLIC_URL.concat(
-                        data.certificate
-                      )}`}
-                      download={`Acta de la ${data.name.concat(".pdf")}`}
-                    >
-                      {<FaFilePdf />}
-                    </Anchor>
-                  </Td>
-                ) : (
-                  <Td>Pendiente de aprobación en próxima sesión</Td>
-                )}
-              </Tr>
-            ))}
+            {Acuerdos.filter((x) => x.estatus !== "Concluido")
+              .reverse()
+              .map((acuerdo) => (
+                <Tr key={acuerdo.id}>
+                  <TD>{acuerdo.id}</TD>
+                  <TD>{acuerdo.acuerdo}</TD>
+                  <TD>
+                    <p>{acuerdo.sesionini}</p>
+                    <p>{acuerdo.fechaini}</p>
+                  </TD>
+                  <TD>Avance</TD>
+                </Tr>
+              ))}
           </Tbody>
         </Tabla>
-      ))}
-      <Title style={{ border: "none" }}>
-        Acuerdos del Consejo Nacional Forestal
-      </Title>
-      <Separator />
-      <Tabla>
-        <Thead>
-          <Tr>
-            <Title style={{ color: "var(--dark-yellow)" }} colSpan={4}>
-              En proceso
-            </Title>
-          </Tr>
-          <Tr>
-            <ThProcess>No. ID</ThProcess>
-            <ThProcess>Acuerdo</ThProcess>
-            <ThProcess>Toma del acuerdo</ThProcess>
-            <ThProcess colSpan={2}>Último avance</ThProcess>
-          </Tr>
-        </Thead>
-        <Tbody>
-          {Acuerdos.filter((x) => x.estatus !== "Concluido")
-            .reverse()
-            .map((acuerdo) => (
-              <Tr key={acuerdo.id}>
-                <TD>{acuerdo.id}</TD>
-                <TD>{acuerdo.acuerdo}</TD>
-                <TD>
-                  <p>{acuerdo.sesionini}</p>
-                  <p>{acuerdo.fechaini}</p>
-                </TD>
-                <TD>Avance</TD>
-              </Tr>
-            ))}
-        </Tbody>
-      </Tabla>
-      <Tabla>
-        <Thead>
-          <Tr>
-            <Title style={{ color: "var(--green)" }} colSpan={3}>
-              Concluidos
-            </Title>
-          </Tr>
-          <Tr>
-            <ThConcluded>No. ID</ThConcluded>
-            <ThConcluded>Acuerdo</ThConcluded>
-            {/*<ThConcluded>Toma del acuerdo</ThConcluded>*/}
-            <ThConcluded>Conclusión del acuerdo</ThConcluded>
-            {/*  <ThConcluded>Evidencia</ThConcluded>*/}
-          </Tr>
-        </Thead>
-        <Tbody>
-          {Acuerdos.filter((x) => x.estatus === "Concluido")
-            .reverse()
-            .map((acuerdo) => (
-              <Tr key={acuerdo.id}>
-                <TD>{acuerdo.id}</TD>
-                <TD>{acuerdo.acuerdo}</TD>
-                <TD>
-                  <p>{acuerdo.sesionini}</p>
-                  <p>{acuerdo.fechaini}</p>
-                </TD>
-                {/* 
+        <p>Exportar datos</p>
+        <ExportExcel
+          data={Acuerdos.filter(acuerdo => acuerdo.estatus !== 'Concluido')}
+          filename={"Acuerdos en Proceso del Consejo Nacional Forestal"}
+          sheetname={"EnProceso"}
+        />
+      </Collapsible>
+
+      <Collapsible title={"Acuerdos Concluidos"}>
+        <Tabla>
+          <Thead>
+            <Tr>
+              <Title style={{ color: "var(--green)" }} colSpan={3}>
+                Concluidos
+              </Title>
+            </Tr>
+            <Tr>
+              <ThConcluded>No. ID</ThConcluded>
+              <ThConcluded>Acuerdo</ThConcluded>
+              {/*<ThConcluded>Toma del acuerdo</ThConcluded>*/}
+              <ThConcluded>Conclusión del acuerdo</ThConcluded>
+              {/*  <ThConcluded>Evidencia</ThConcluded>*/}
+            </Tr>
+          </Thead>
+          <Tbody>
+            {Acuerdos.filter((x) => x.estatus === "Concluido")
+              .reverse()
+              .map((acuerdo) => (
+                <Tr key={acuerdo.id}>
+                  <TD>{acuerdo.id}</TD>
+                  <TD>{acuerdo.acuerdo}</TD>
+                  <TD>
+                    <p>{acuerdo.sesionini}</p>
+                    <p>{acuerdo.fechaini}</p>
+                  </TD>
+                  {/* 
                 <TD>
                   <p>{acuerdo.sesionfin}</p>
                   <p>{acuerdo.fechafin}</p>
@@ -411,10 +432,17 @@ const Table = () => {
                   proceso.
                 </TD>
                 */}
-              </Tr>
-            ))}
-        </Tbody>
-      </Tabla>
+                </Tr>
+              ))}
+          </Tbody>
+        </Tabla>
+        <p>Exportar datos</p>
+        <ExportExcel
+          data={Acuerdos.filter(acuerdo => acuerdo.estatus === 'Concluido')}
+          filename={"Acuerdos Concluidos del Consejo Nacional Forestal"}
+          sheetname={"Concluidos"}
+        />
+      </Collapsible>
     </>
   );
 };

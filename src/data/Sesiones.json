@@ -47,6 +47,7 @@
   {
     "id": 2,
     "title": "Sesiones 2021",
+    "year": "2021",
     "sesions": [
       {
         "name": "59ª Sesión Ordinaria",
@@ -95,6 +96,7 @@
   {
     "id": 3,
     "title": "Sesiones 2020",
+    "year": "2020",
     "sesions": [
       {
         "name": "55ª Sesión Ordinaria",
@@ -136,6 +138,7 @@
   {
     "id": 4,
     "title": "Sesiones 2019",
+    "year": "2019",
     "sesions": [
       {
         "name": "51ª Sesión Ordinaria",

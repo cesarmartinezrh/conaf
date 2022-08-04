@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Frame = styled.iframe`
   width: 100%;
+  margin-bottom: 2%;
 `;
 
 const Video = () => {
