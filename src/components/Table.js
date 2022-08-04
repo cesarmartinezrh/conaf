@@ -182,8 +182,10 @@ const Anchor = styled.a`
 `;
 
 const FreeSpace = styled.div`
-  height: 15px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 `;
 
 const Table = () => {
@@ -212,7 +214,7 @@ const Table = () => {
       ))}
       {Data.filter((tab) => tab.id === 1).map((table) => (
         <Tabla key={table.id}>
-          <Thead >
+          <Thead>
             <Tr>
               <Title colSpan={5}>{table.title}</Title>
             </Tr>
@@ -281,6 +283,8 @@ const Table = () => {
         </Tabla>
       ))}
       <Video />
+      <Titulo isHeader>Histórico de sesiones</Titulo>
+      <Separator />
       {Data.filter((tab) => tab.id !== 0 && tab.id !== 1 && tab.id !== 4).map(
         (table) => (
           <Collapsible key={table.id} title={table.year}>
@@ -382,17 +386,19 @@ const Table = () => {
                     <p>{acuerdo.sesionini}</p>
                     <p>{acuerdo.fechaini}</p>
                   </TD>
-                  <TD>Avance</TD>
+                  <TD>En proceso</TD>
                 </Tr>
               ))}
           </Tbody>
         </Tabla>
-        <p>Exportar datos</p>
-        <ExportExcel
-          data={Acuerdos.filter(acuerdo => acuerdo.estatus !== 'Concluido')}
-          filename={"Acuerdos en Proceso del Consejo Nacional Forestal"}
-          sheetname={"EnProceso"}
-        />
+        <FreeSpace>
+          <p style={{ fontWeight: "600" }}>Descargar</p>
+          <ExportExcel
+            data={Acuerdos.filter((acuerdo) => acuerdo.estatus !== "Concluido")}
+            filename={"Acuerdos en Proceso del Consejo Nacional Forestal"}
+            sheetname={"EnProceso"}
+          />
+        </FreeSpace>
       </Collapsible>
 
       <Collapsible title={"Acuerdos Concluidos"}>
@@ -419,8 +425,8 @@ const Table = () => {
                   <TD>{acuerdo.id}</TD>
                   <TD>{acuerdo.acuerdo}</TD>
                   <TD>
-                    <p>{acuerdo.sesionini}</p>
-                    <p>{acuerdo.fechaini}</p>
+                    <p>{acuerdo.sesionfin}</p>
+                    <p>{acuerdo.fechafin}</p>
                   </TD>
                   {/* 
                 <TD>
@@ -436,12 +442,15 @@ const Table = () => {
               ))}
           </Tbody>
         </Tabla>
-        <p>Exportar datos</p>
-        <ExportExcel
-          data={Acuerdos.filter(acuerdo => acuerdo.estatus === 'Concluido')}
-          filename={"Acuerdos Concluidos del Consejo Nacional Forestal"}
-          sheetname={"Concluidos"}
-        />
+        <FreeSpace>
+          <p style={{ fontWeight: "600" }}>Descargar</p>
+
+          <ExportExcel
+            data={Acuerdos.filter((acuerdo) => acuerdo.estatus === "Concluido")}
+            filename={"Acuerdos Concluidos del Consejo Nacional Forestal"}
+            sheetname={"Concluidos"}
+          />
+        </FreeSpace>
       </Collapsible>
     </>
   );

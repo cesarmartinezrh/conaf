@@ -260,9 +260,9 @@
     "sesionini": "55ª Sesión Ordinaria",
     "fechaini": "26 de noviembre 2020",
     "fechaformatini": "26/11/2020",
-    "sesionfin": "En proceso",
-    "fechafin": "En proceso",
-    "fechaformatfin": "En proceso"
+    "sesionfin": "59ª Sesión Ordinaria",
+    "fechafin": "25 de noviembre 2021",
+    "fechaformatfin": "25/11/2021"
   },
   {
     "id": "CONAF 18/09/19-175",
@@ -271,9 +271,9 @@
     "sesionini": "57ª Sesión Ordinaria",
     "fechaini": "03 de junio 2021",
     "fechaformatini": "03/06/2021",
-    "sesionfin": "En proceso",
-    "fechafin": "En proceso",
-    "fechaformatfin": "En proceso"
+    "sesionfin": "59ª Sesión Ordinaria",
+    "fechafin": "25 de noviembre 2021",
+    "fechaformatfin": "25/11/2021"
   },
   {
     "id": "CONAF 18/09/19-162E",
@@ -359,7 +359,7 @@
     "sesionini": "60ª Sesión Ordinaria",
     "fechaini": "17 de febrero 2022",
     "fechaformatini": "17/02/2022",
-    "sesionfin": "60ª Sesión Ordinaria",
+    "sesionfin": "61ª Sesión Ordinaria",
     "fechafin": "26 de mayo 2022",
     "fechaformatfin": "26/05/2022"
   },
@@ -387,33 +387,11 @@
   },
   {
     "id": "CONAF 18/09/19-182",
-    "acuerdo": "“El CONAF, solicita a los Comités Técnicos del Consejo ajustar su Programa de Actividades de acuerdo a la retroalimentación expresada en esta sesión y enviar la versión final a la Secretaría Técnica para su integración y a su vez su envío al Pleno y a todos los Comités Técnicos a más tardar en quince días hábiles, plazo que es pertinente para el desarrollo de la sesión pendiente del Comité Técnico de Bosques y Cambio Climático”.",
-    "estatus": "En proceso",
-    "sesionini": "61ª Sesión Ordinaria",
-    "fechaini": "26 de mayo 2022",
-    "fechaformatini": "16/05/2022",
-    "sesionfin": "En proceso",
-    "fechafin": "En proceso",
-    "fechaformatfin": "En proceso"
-  },
-  {
-    "id": "CONAF 18/09/19-183",
     "acuerdo": "El CONAF, solicita a los Comités Técnicos del Consejo ajustar su Programa de Actividades de acuerdo a la retroalimentación expresada en esta sesión y enviar la versión final a la Secretaría Técnica para su integración y a su vez su envío al Pleno y a todos los Comités Técnicos a más tardar en quince días hábiles, plazo que es pertinente para el desarrollo de la sesión pendiente del Comité Técnico de Bosques y Cambio Climático.",
     "estatus": "En proceso",
     "sesionini": "61ª Sesión Ordinaria",
     "fechaini": "26 de mayo 2022",
-    "fechaformatini": "26/05/2022",
-    "sesionfin": "En proceso",
-    "fechafin": "En proceso",
-    "fechaformatfin": "En proceso"
-  },
-  {
-    "id": "CONAF 18/09/19-184",
-    "acuerdo": "“El Consejo Nacional Forestal, solicita a la Secretaría Técnica atender las recomendaciones de la evaluación al funcionamiento y operación de este Consejo, en el marco de la Alianza para el Gobierno Abierto, así como informar de los avances al respecto”.",
-    "estatus": "En proceso",
-    "sesionini": "61ª Sesión Ordinaria",
-    "fechaini": "26 de mayo 2022",
-    "fechaformatini": "26/05/2022",
+    "fechaformatini": "16/05/2022",
     "sesionfin": "En proceso",
     "fechafin": "En proceso",
     "fechaformatfin": "En proceso"
