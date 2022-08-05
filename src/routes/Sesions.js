@@ -1,11 +1,7 @@
 import Table from "../components/Table";
 
 const Sesions = () => {
-  return (
-    <>
-      <Table />
-    </>
-  )
-}
+  return <Table />;
+};
 
-export default Sesions
+export default Sesions;

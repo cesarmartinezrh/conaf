@@ -58,7 +58,7 @@ const Th = styled.th`
   }
 
   @media screen and (min-width: 1024px) {
-    font-size:18px};
+    font-size:18px;
   }
 `;
 
@@ -425,7 +425,14 @@ const Table = () => {
                   <TD>{acuerdo.id}</TD>
                   <TD>{acuerdo.acuerdo}</TD>
                   <TD>
-                    <p>{acuerdo.sesionfin}</p>
+                    <p><a
+                      href={`${process.env.PUBLIC_URL.concat(
+                        acuerdo.certificate
+                      )}`}
+                      download={`Acta de la ${acuerdo.sesionfin.concat(".pdf")}`}
+                    >
+                    {acuerdo.sesionfin}
+                    </a></p>
                     <p>{acuerdo.fechafin}</p>
                   </TD>
                   {/* 
