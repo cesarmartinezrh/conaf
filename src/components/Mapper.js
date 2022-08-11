@@ -63,9 +63,9 @@ const Mapper = () => {
           </Link>
         </Container>
 
-      <Container id={"container"}>
+      { state ? <Container id={"container"}>
         <ConsejoEstatal clave={state} />
-      </Container>
+      </Container> : null } 
     </>
   );
 };

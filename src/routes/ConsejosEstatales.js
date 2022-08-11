@@ -19,13 +19,19 @@ const Reference = styled.p`
 
 const ConsejosEstatales = () => {
 
+  const [ loading, setLoading ] = useState(false)
+
+
+  setTimeout(() => {
+    setLoading((loading) => !loading)
+  }, 1000)
 
   return (
     <>
       <Title isHeader>Consejos Estatales Forestales</Title>
       <Separator />
       <Reference>Seleccione el estado del que desee visualizar información.</Reference>
-      <Mapper /> 
+      { loading ? <Mapper /> : <h1>Loading...</h1> } 
     </>
   );
 };
