@@ -33,11 +33,5 @@
     "id": 7,
     "name": "Consejos Estatales",
     "to": "consejos-estatales"
-  },
-  {
-    "id": 8,
-    "name": "Encuesta",
-    "to": "encuesta"
   }
-
 ]

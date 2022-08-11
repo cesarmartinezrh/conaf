@@ -5,6 +5,7 @@ import logo from "../logo.png";
 import Burger from "./Burger";
 import Data from "../data/NavBar.json";
 import logocnf from "../logocnf.png";
+import {FaAngleLeft} from "react-icons/fa";
 
 const Nav = styled.nav`
   width: 100%;
@@ -15,7 +16,7 @@ const Nav = styled.nav`
   position: sticky;
   top: 0px;
   z-index: 2;
-  box-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 767px) {
     display: none;
@@ -24,13 +25,40 @@ const Nav = styled.nav`
   @media screen and (min-width: 767px) and (max-width: 1023px) {
     display: none;
   }
-
-
 `;
 
 const LogoLink = styled(NavLink)`
   width: 40%;
-`
+`;
+
+const Back = styled.a`
+  grid-area: back;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  border-radius: 5px;
+  background-color: var(--dark-green);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 8px;
+  padding: 5px 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+ @media screen and (min-width: 767px) and (max-width: 1023px) {
+    font-size: 12px;
+  }
+
+@media screen and (min-width: 1024px){
+    font-size: 12px;
+  }
+`;
+
 
 const Lenk = styled(NavLink)`
   display: flex;
@@ -64,7 +92,7 @@ const Lenk = styled(NavLink)`
     }
   }
 
-@media screen and (min-width: 1300px) {
+  @media screen and (min-width: 1300px) {
     font-size: 16px;
   }
 
@@ -79,22 +107,22 @@ const DoubleBanner = styled.div`
   height: 4rem;
   width: 100%;
   display: grid;
-  grid-template-columns: 30% 65% 5%;
+  grid-template-columns: 30% 45% 20% 5%;
   grid-template-rows: 1;
-  grid-template-areas: "title logo burger";
+  grid-template-areas: "title logo back burger";
   align-items: center;
   padding: 0 15px;
   z-index: 3;
   box-shadow: 0px 0px 10px var(--dark-green);
 
   @media screen and (min-width: 767px) and (max-width: 1023px) {
-    grid-template-columns: 30% 65% 5%;
+    grid-template-columns: 20% 55% 20% 5%;
   }
 
   @media screen and (min-width: 1024px) {
     height: 6.5rem;
-    grid-template-columns: 35% 5% 50%;
-    grid-template-areas: "title . logo";
+    grid-template-columns: 25% 5% 60% 10%;
+    grid-template-areas: "title . logo back";
     border-bottom: none;
   }
 `;
@@ -102,7 +130,7 @@ const DoubleBanner = styled.div`
 const Logo = styled.img`
   grid-area: logo;
   @media screen and (max-width: 767px) {
-    display: none;
+   height: 1.5rem; 
   }
 
   @media screen and (min-width: 767px) and (max-width: 1024px) {
@@ -131,10 +159,11 @@ const NavBar = () => {
   return (
     <>
       <DoubleBanner>
+        <Back href={"https://snif.cnf.gob.mx/"}><FaAngleLeft size={20}/> Regresar al SNIF</Back>
         <LogoLink to={"/"}>
-          <MainLogo alt={'Logo CONAF'} src={logocnf} />
+          <MainLogo alt={"Logo CONAF"} src={logocnf} />
         </LogoLink>
-        <Logo alt={'Logo CONAFOR'} src={logo} />
+        <Logo alt={"Logo CONAFOR"} src={logo} />
         <Burger />
       </DoubleBanner>
       <Nav>

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "estado": "Aguascalientes",
-    "shortname": "AGS",
+    "shortname": "ags",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -46,7 +46,7 @@
   {
     "id": 2,
     "estado": "Baja California",
-    "shortname": "BC",
+    "shortname": "bc",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -58,7 +58,7 @@
   {
     "id": 3,
     "estado": "Baja California Sur",
-    "shortname": "BCS",
+    "shortname": "bcs",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -75,7 +75,7 @@
   {
     "id": 4,
     "estado": "Campeche",
-    "shortname": "CAM",
+    "shortname": "cam",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -112,7 +112,7 @@
       {
         "nombre": "1ª Sesión de Instalación",
         "fecha": "16 de mayo 2022",
-        "path": ""
+        "path": "En proceso"
       },
       {
         "nombre": "1ª Sesión Extraordinaria",
@@ -129,7 +129,7 @@
   {
     "id": 5,
     "estado": "Chiapas",
-    "shortname": "CHIS",
+    "shortname": "chis",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -158,7 +158,7 @@
   {
     "id": 6,
     "estado": "Chihuahua",
-    "shortname": "CHIH",
+    "shortname": "chih",
     "actas2021": [
       {
         "nombre": "172ª Sesión Ordinaria",
@@ -207,12 +207,12 @@
   {
     "id": 7,
     "estado": "Ciudad de México",
-    "shortname": "CDMX"
+    "shortname": "cdmx"
   },
   {
     "id": 8,
     "estado": "Coahuila",
-    "shortname": "COAH",
+    "shortname": "coah",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -234,7 +234,7 @@
   {
     "id": 9,
     "estado": "Colima",
-    "shortname": "COL",
+    "shortname": "col",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -298,7 +298,7 @@
   {
     "id": 10,
     "estado": "Durango",
-    "shortname": "DGO",
+    "shortname": "dgo",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -327,7 +327,7 @@
   {
     "id": 11,
     "estado": "Guanajuato",
-    "shortname": "GTO",
+    "shortname": "gto",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -349,7 +349,7 @@
   {
     "id": 12,
     "estado": "Guerrero",
-    "shortname": "GRO",
+    "shortname": "gro",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -371,7 +371,7 @@
   {
     "id": 13,
     "estado": "Hidalgo",
-    "shortname": "HGO",
+    "shortname": "hgo",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -383,7 +383,7 @@
   {
     "id": 14,
     "estado": "Jalisco",
-    "shortname": "JAL",
+    "shortname": "jal",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -470,19 +470,19 @@
       {
         "nombre": "5ª Sesión Ordinaria",
         "fecha": "26 de mayo 2022",
-        "path": ""
+        "path": "En proceso"
       },
       {
         "nombre": "6ª Sesión Ordinaria",
         "fecha": "30 de junio 2022",
-        "path": ""
+        "path": "En proceso"
       }
     ]
   },
   {
     "id": 15,
     "estado": "México",
-    "shortname": "MEX",
+    "shortname": "mex",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -494,7 +494,7 @@
   {
     "id": 16,
     "estado": "Michoacán",
-    "shortname": "MICH",
+    "shortname": "mich",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -516,14 +516,14 @@
       {
         "nombre": "1ª Sesión Extraordinaria",
         "fecha": "09 de junio 2022",
-        "path": ""
+        "path": "En proceso"
       }
     ]
   },
   {
     "id": 17,
     "estado": "Morelos",
-    "shortname": "MOR",
+    "shortname": "mor",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -570,14 +570,14 @@
       {
         "nombre": "2ª Sesión Extraordinaria",
         "fecha": "13 de junio 2022",
-        "path": ""
+        "path": "En proceso"
       }
     ]
   },
   {
     "id": 18,
     "estado": "Nayarit",
-    "shortname": "NAY",
+    "shortname": "nay",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -594,14 +594,14 @@
       {
         "nombre": "1ª Sesión Ordinaria",
         "fecha": "20 de abril 2022",
-        "path": ""
+        "path": "En proceso"
       }
     ]
   },
   {
     "id": 19,
     "estado": "Nuevo León",
-    "shortname": "NL",
+    "shortname": "nl",
     "actas2021": [
       {
         "nombre": "182ª Sesión Ordinaria",
@@ -623,14 +623,14 @@
       {
         "nombre": "185ª Sesión Ordinaria",
         "fecha": "09 de mayo 2022",
-        "path": ""
+        "path": "En proceso"
       }
     ]
   },
   {
     "id": 20,
     "estado": "Oaxaca",
-    "shortname": "OAX",
+    "shortname": "oax",
     "actas2021": [
       {
         "nombre": "1ª Sesión Extraordinaria",
@@ -647,7 +647,7 @@
   {
     "id": 21,
     "estado": "Puebla",
-    "shortname": "PUE",
+    "shortname": "pue",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -681,19 +681,19 @@
   {
     "id": 22,
     "estado": "Querétaro",
-    "shortname": "QTO",
+    "shortname": "qto",
     "actas2022": [
       {
         "nombre": "1ª Sesión Ordinaria",
         "fecha": "30 de junio 2022",
-        "path": ""
+        "path": "En proceso"
       }
     ]
   },
   {
     "id": 23,
     "estado": "Quintana Roo",
-    "shortname": "QROO",
+    "shortname": "qroo",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -717,7 +717,7 @@
   {
     "id": 24,
     "estado": "San Luis Potosí",
-    "shortname": "SLP",
+    "shortname": "slp",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -761,7 +761,7 @@
   {
     "id": 25,
     "estado": "Sinaloa",
-    "shortname": "SIN",
+    "shortname": "sin",
     "actas2021": [
       {
         "nombre": "1ª Sesión Extraordinaria",
@@ -779,12 +779,13 @@
   },
   {
     "id": 26,
-    "estado": "Sonora"
+    "estado": "Sonora",
+    "shortname": "son"
   },
   {
     "id": 27,
     "estado": "Tabasco",
-    "shortname": "TAB",
+    "shortname": "tab",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -795,12 +796,13 @@
   },
   {
     "id": 28,
-    "estado": "Tamaulipas"
+    "estado": "Tamaulipas",
+    "shortname": "tam"
   },
   {
     "id": 29,
     "estado": "Tlaxcala",
-    "shortname": "TLAX",
+    "shortname": "tlax",
     "actas2022": [
       {
         "nombre": "1ª Sesión Extraordinaria",
@@ -810,14 +812,14 @@
       {
         "nombre": "1ª Sesión Ordinaria",
         "fecha": "02 de junio 2022",
-        "path": ""
+        "path": "En proceso"
       }
     ]
   },
   {
     "id": 30,
     "estado": "Veracruz",
-    "shortname": "VER",
+    "shortname": "ver",
     "actas2021": [
       {
         "nombre": "1ª Sesión Ordinaria",
@@ -884,51 +886,51 @@
       {
         "nombre": "1ª Sesión Ordinaria",
         "fecha": "18 de enero 2022",
-        "path": ""
+        "path": "En proceso"
       },
       {
         "nombre": "2ª Sesión Ordinaria",
         "fecha": "15 de febrero 2022",
-        "path": ""
+        "path": "En proceso"
       },
       {
         "nombre": "3ª Sesión Ordinaria",
         "fecha": "15 de marzo 2022",
-        "path": ""
+        "path": "En proceso"
       },
       {
         "nombre": "4ª Sesión Ordinaria",
         "fecha": "19 de abril 2022",
-        "path": ""
+        "path": "En proceso"
       },
       {
         "nombre": "5ª Sesión Ordinaria",
         "fecha": "17 de mayo 2022",
-        "path": ""
+        "path": "En proceso"
       },
       {
         "nombre": "6ª Sesión Ordinaria",
         "fecha": "21 de junio 2022",
-        "path": ""
+        "path": "En proceso"
       }
     ]
   },
   {
     "id": 31,
     "estado": "Yucatán",
-    "shortname": "YUC",
+    "shortname": "yuc",
     "actas2022": [
       {
         "nombre": "4ª Sesión Ordinaria",
         "fecha": "04 de mayo 2022",
-        "path": ""
+        "path": "En proceso"
       }
     ]
   },
   {
     "id": 32,
     "estado": "Zacatecas",
-    "shortname": "ZAC",
+    "shortname": "zac",
     "actas2022": [
       {
         "nombre": "1ª Sesión Ordinaria",
