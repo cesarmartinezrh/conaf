@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Separator from "../components/Separator";
 import Title from "../components/Title";
 import Mapper from "../components/Mapper";
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Reference = styled.p`
   display: block;
   width: 100%;
   font-size: 12px;
-  color: var(--dark-grey); 
+  color: var(--dark-grey);
   text-decoration: none;
   font-style: italic;
 
@@ -18,20 +18,22 @@ const Reference = styled.p`
 `;
 
 const ConsejosEstatales = () => {
+  const [loading, setLoading] = useState(false);
 
-  const [ loading, setLoading ] = useState(false)
-
-
-  setTimeout(() => {
-    setLoading((loading) => !loading)
-  }, 1000)
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading((loading) => !loading);
+    }, 1000);
+  }, []);
 
   return (
     <>
       <Title isHeader>Consejos Estatales Forestales</Title>
       <Separator />
-      <Reference>Seleccione el estado del que desee visualizar información.</Reference>
-      { loading ? <Mapper /> : <h1>Loading...</h1> } 
+      <Reference>
+        Seleccione el estado del que desee visualizar información.
+      </Reference>
+      {loading ? <Mapper /> : <h1>Loading...</h1>}
     </>
   );
 };
