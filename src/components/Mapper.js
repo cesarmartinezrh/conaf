@@ -15,7 +15,7 @@ const Container = styled.div`
   border-radius: 4px;
 
   @media screen and (min-width: 1024px){
-    height: ${({map}) => map ? 'auto' : '700px'};
+    height: ${({map}) => map ? '500px' : '700px'};
   }
 `;
 
@@ -33,17 +33,9 @@ const TitleMap = styled.span`
 const Mapper = () => {
   const ref = useRef(null);
 
-  const [state, setState] = useState("jal");
-  const [height, setHeight] = useState(0);
-  const [width, setWidth] = useState(0);
-  const [hover, setHover] = useState("Jalisco");
+  const [state, setState] = useState("");
+  const [hover, setHover] = useState("Coloque el cursor en el mapa");
 
-  useEffect(() => {
-    setHeight(ref.current.offsetHeight);
-    setWidth(ref.current.offsetWidth);
-  }, []);
-
-  const minWidth = width * 0.5;
 
   const handlerClick = (e) => {
     setState(e.clave);
@@ -61,13 +53,10 @@ const Mapper = () => {
         <Container map ref={ref}>
           <Link smooth offset={-50} to={"container"}>
           <ImageMapper
-            src={map}
             map={coords}
+            src={map}
             fillColor={"rgba(35,91,78)"}
             strokeColor={"rgba(0,0,0)"}
-            parentWidth={minWidth}
-            responsive={true}
-            height={height}
             onClick={handlerClick}
             onMouseEnter={handleMouseEnter}
           />

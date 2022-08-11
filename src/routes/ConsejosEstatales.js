@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Separator from "../components/Separator";
 import Title from "../components/Title";
 import Mapper from "../components/Mapper";
@@ -17,12 +18,14 @@ const Reference = styled.p`
 `;
 
 const ConsejosEstatales = () => {
+
+
   return (
     <>
       <Title isHeader>Consejos Estatales Forestales</Title>
       <Separator />
       <Reference>Seleccione el estado del que desee visualizar información.</Reference>
-      <Mapper />
+      <Mapper /> 
     </>
   );
 };
