@@ -15,7 +15,7 @@ const Container = styled.div`
   border-radius: 4px;
 
   @media screen and (min-width: 1024px){
-    height: ${({map}) => map ? '500px' : '700px'};
+    height: ${({map}) => map ? '500px' : 'auto'};
   }
 `;
 
@@ -51,7 +51,7 @@ const Mapper = () => {
         <TitleMap>{hover}</TitleMap>
       </TitleContainer>
         <Container map ref={ref}>
-          <Link smooth offset={-50} to={"container"}>
+          <Link smooth offset={-250} to={"container"}>
           <ImageMapper
             map={coords}
             src={map}

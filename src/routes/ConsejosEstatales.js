@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Separator from "../components/Separator";
 import Title from "../components/Title";
 import Mapper from "../components/Mapper";
@@ -18,13 +17,6 @@ const Reference = styled.p`
 `;
 
 const ConsejosEstatales = () => {
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading((loading) => !loading);
-    }, 1000);
-  }, []);
 
   return (
     <>
@@ -33,7 +25,7 @@ const ConsejosEstatales = () => {
       <Reference>
         Seleccione el estado del que desee visualizar información.
       </Reference>
-      {loading ? <Mapper /> : <h1>Loading...</h1>}
+      <Mapper />
     </>
   );
 };
