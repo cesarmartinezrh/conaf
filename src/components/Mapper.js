@@ -13,10 +13,6 @@ const Container = styled.div`
   justify-content: center;
   position: sticky;
   border-radius: 4px;
-
-  @media screen and (min-width: 1024px) {
-    height: 500px;
-  }
 `;
 
 const TitleContainer = styled.div`
@@ -46,6 +42,36 @@ const Mapper = () => {
     setHover(name);
   };
 
+  function calculateWidth(width) {
+      switch (width) {
+            case 320:
+                width = width * 0.85;
+                break;
+              case 360:
+                width = width * 0.85;
+                break;
+              case 375:
+                width = width * 0.85;
+                break;
+              case 411:
+                width = width * 0.85;
+                break;
+              case 414:
+                width = width * 0.85;
+                break;
+              case 540:
+                width = width * 0.85;
+                break;
+              default:
+                width = (width / 2) * 0.9;
+                break;
+            
+      }
+      return width;
+    
+  }
+
+
   return (
     <>
       <TitleContainer>
@@ -60,6 +86,7 @@ const Mapper = () => {
               strokeColor={"rgba(0,0,0)"}
               onClick={handlerClick}
               onMouseEnter={handleMouseEnter}
+              width={calculateWidth(window.screen.width)}
               imgWidth={663}
             />
         </Link>
