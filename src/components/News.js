@@ -26,8 +26,9 @@ const Anchor = styled.a`
   padding: 5px 20px;
   margin: 0 5px;
   text-decoration: none;
-  color: var(--dark-green);
+  color: var(--green);
   line-weight: 1.5;
+  font-weight: 600;
 
   &:hover {
   text-decoration: var(--wine) underline;

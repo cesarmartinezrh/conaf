@@ -23,21 +23,40 @@ const ConsejoContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+  gap: 5px 0;
 `;
 
 const Anchor = styled.a`
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #cdcbcb;
   color: var(--red);
   cursor: pointer;
+  padding: 2px 0;
 `;
 
-const Text = styled.p``;
+const Text = styled.p`
+  font-size: 9px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #cdcbcb;
+  padding: 2px 0;
+
+  @media screen and (min-width: 767px) {
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 16px;
+  }
+`;
 const HeadText = styled.p`
   width: 100%;
   text-align: center;
   font-weight: 600;
-  margin-bottom: 10px;
-  border-bottom: 1px solid var(--grey);
-`
+  border-bottom: 1px solid var(--dark-grey);
+  border-top: 1px solid var(--dark-grey);
+`;
 
 const ConsejoEstatal = ({ clave }) => {
   const estado = Estados.find((estado) => estado.shortname === clave);
@@ -55,7 +74,7 @@ const ConsejoEstatal = ({ clave }) => {
               <>
                 <HeadText>Sesión</HeadText>
                 <HeadText>Fecha</HeadText>
-                <HeadText>Descargable</HeadText>
+                <HeadText>Acta PDF</HeadText>
               </>
             )}
             {estado.actas2022?.map((acta) => (
@@ -81,7 +100,7 @@ const ConsejoEstatal = ({ clave }) => {
               <>
                 <HeadText>Sesión</HeadText>
                 <HeadText>Fecha</HeadText>
-                <HeadText>Descargable</HeadText>
+                <HeadText>Acta PDF</HeadText>
               </>
             )}
             {estado.actas2021?.map((acta) => (

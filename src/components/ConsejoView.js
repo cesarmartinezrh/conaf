@@ -8,7 +8,7 @@ import Estado from "../data/Estados.json";
 const Container = styled.div`
   width: 100%;
   display: flex;
-  padding: 15px;
+  padding: 5px;
   justify-content: center;
   position: sticky;
   border-radius: 4px;
@@ -18,6 +18,7 @@ const Select = styled(Field)`
     width: 100%;
     height: 39px;
     padding: 6px 12px;
+    margin-top: 10px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
