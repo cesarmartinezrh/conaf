@@ -14,8 +14,8 @@ const Container = styled.div`
   position: sticky;
   border-radius: 4px;
 
-  @media screen and (min-width: 1024px){
-    height: ${({map}) => map ? '500px' : 'auto'};
+  @media screen and (min-width: 1024px) {
+    height: ${({ map }) => (map ? "600px" : "500px")};
   }
 `;
 
@@ -31,10 +31,8 @@ const TitleMap = styled.span`
 `;
 
 const Mapper = () => {
-
   const [state, setState] = useState("");
   const [hover, setHover] = useState("Coloque el cursor en el mapa");
-
 
   const handlerClick = ({ clave }) => {
     setState(clave);
@@ -44,13 +42,40 @@ const Mapper = () => {
     setHover(name);
   };
 
+  function calculateWidth(width) {
+    switch (width) {
+      case 320:
+        width = width * 0.85;
+        break;
+      case 360:
+        width = width * 0.85;
+        break;
+      case 375:
+        width = width * 0.85;
+        break;
+      case 411:
+        width = width * 0.85;
+        break;
+      case 414:
+        width = width * 0.85;
+        break;
+      case 540:
+        width = width * 0.85;
+        break;
+      default:
+        width = (width / 2) * 0.9;
+        break;
+    }
+    return width;
+  }
+
   return (
     <>
       <TitleContainer>
         <TitleMap>{hover}</TitleMap>
       </TitleContainer>
-        <Container map>
-          <Link smooth offset={-250} to={"container"}>
+      <Container map>
+        <Link smooth offset={-250} to={"container"}>
           <ImageMapper
             map={coords}
             src={map}
@@ -58,13 +83,17 @@ const Mapper = () => {
             strokeColor={"rgba(0,0,0)"}
             onClick={handlerClick}
             onMouseEnter={handleMouseEnter}
+            imgWidth={663}
+            width={calculateWidth(window.screen.width)}
           />
-          </Link>
-        </Container>
+        </Link>
+      </Container>
 
-      { state ? <Container id={"container"}>
-        <ConsejoEstatal clave={state} />
-      </Container> : null } 
+      {state ? (
+        <Container id={"container"}>
+          <ConsejoEstatal clave={state} />
+        </Container>
+      ) : null}
     </>
   );
 };
