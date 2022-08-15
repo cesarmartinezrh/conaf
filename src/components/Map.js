@@ -1,19 +1,4 @@
-import { useState } from "react";
-import ImageMapper from "react-img-mapper";
-import coords from "../data/Coords.json";
-import styled from "styled-components";
-import image from "../assets/images/mapa.webp";
-import ConsejoEstatal from "./ConsejoEstatal";
-import { Link } from "react-scroll";
 
-const Container = styled.div`
-  width: 100%;
-  display: flex;
-  padding: 15px;
-  justify-content: center;
-  position: sticky;
-  border-radius: 4px;
-`;
 
 const TitleContainer = styled.div`
   display: flex;
@@ -26,7 +11,7 @@ const TitleMap = styled.span`
   font-weight: 600;
 `;
 
-const Mapper = () => {
+
   const URL = image;
   const MAP = coords;
 
@@ -41,10 +26,7 @@ const Mapper = () => {
     setHover(name);
   };
 
-  if (URL && MAP) {
-    return (
-      <>
-        <TitleContainer>
+<TitleContainer>
           <TitleMap>{hover}</TitleMap>
         </TitleContainer>
         <Container>
@@ -61,17 +43,3 @@ const Mapper = () => {
             />
           </Link>
         </Container>
-
-        {state ? (
-          <Container id={"container"}>
-            <ConsejoEstatal clave={state} />
-          </Container>
-        ) : null}
-      </>
-    );
-  } else {
-    <h1>Cargando..</h1>;
-  }
-};
-
-export default Mapper;

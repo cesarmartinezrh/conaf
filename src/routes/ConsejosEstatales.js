@@ -1,6 +1,6 @@
 import Separator from "../components/Separator";
 import Title from "../components/Title";
-import Mapper from "../components/Mapper";
+import ConsejoView from "../components/ConsejoView";
 import styled from "styled-components";
 
 const Reference = styled.p`
@@ -25,7 +25,7 @@ const ConsejosEstatales = () => {
       <Reference>
         Seleccione el estado del que desee visualizar información.
       </Reference>
-      <Mapper />
+      <ConsejoView />
     </>
   );
 };

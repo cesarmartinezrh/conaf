@@ -1,15 +1,14 @@
 import styled from "styled-components";
+import React from "react";
 import Estados from "../data/Estados.json";
 import { FaFilePdf } from "react-icons/fa";
 
 const Main = styled.div`
   width: 100%;
   height: 100%;
-  border-radius: 4px;
 `;
 const Header = styled.div`
   width: 100%;
-  height: 15%;
 `;
 
 const HeaderTitle = styled.h1`
@@ -32,6 +31,13 @@ const Anchor = styled.a`
 `;
 
 const Text = styled.p``;
+const HeadText = styled.p`
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--grey);
+`
 
 const ConsejoEstatal = ({ clave }) => {
   const estado = Estados.find((estado) => estado.shortname === clave);
@@ -45,8 +51,15 @@ const ConsejoEstatal = ({ clave }) => {
           </Header>
           {estado.actas2022 && <Year>2022</Year>}
           <ConsejoContainer>
-            {estado.actas2022?.map((acta) => (
+            {estado.actas2022 && (
               <>
+                <HeadText>Sesión</HeadText>
+                <HeadText>Fecha</HeadText>
+                <HeadText>Descargable</HeadText>
+              </>
+            )}
+            {estado.actas2022?.map((acta) => (
+              <React.Fragment key={acta.path}>
                 <Text>{acta.nombre}</Text>
                 <Text>{acta.fecha}</Text>
                 {acta.path !== "En proceso" ? (
@@ -59,13 +72,20 @@ const ConsejoEstatal = ({ clave }) => {
                 ) : (
                   <Text>{acta.path}</Text>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </ConsejoContainer>
           {estado.actas2021 && <Year>2021</Year>}
           <ConsejoContainer>
-            {estado.actas2021?.map((acta) => (
+            {estado.actas2021 && (
               <>
+                <HeadText>Sesión</HeadText>
+                <HeadText>Fecha</HeadText>
+                <HeadText>Descargable</HeadText>
+              </>
+            )}
+            {estado.actas2021?.map((acta) => (
+              <React.Fragment key={acta.path}>
                 <Text>{acta.nombre}</Text>
                 <Text>{acta.fecha}</Text>
                 {acta.path !== "En proceso" ? (
@@ -78,7 +98,7 @@ const ConsejoEstatal = ({ clave }) => {
                 ) : (
                   <Text>{acta.path}</Text>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </ConsejoContainer>
           {(estado.actas2021 === undefined) &
