@@ -2,10 +2,9 @@ import { useState } from "react";
 import ImageMapper from "react-img-mapper";
 import coords from "../data/Coords.json";
 import styled from "styled-components";
-import map from "../assets/images/mapa.webp";
+import image from "../assets/images/mapa.webp";
 import ConsejoEstatal from "./ConsejoEstatal";
 import { Link } from "react-scroll";
-import { useEffect } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -32,9 +31,12 @@ const TitleMap = styled.span`
 `;
 
 const Mapper = () => {
+
+  const URL = image;
+  const MAP = coords;
+
   const [state, setState] = useState("");
   const [hover, setHover] = useState("Coloque el cursor en el mapa");
-  const [wait, setWait] = useState(false);
 
   const handlerClick = ({ clave }) => {
     setState(clave);
@@ -44,30 +46,22 @@ const Mapper = () => {
     setHover(name);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setWait(true);
-    }, 1500);
-  }, []);
-
   return (
     <>
       <TitleContainer>
         <TitleMap>{hover}</TitleMap>
       </TitleContainer>
-      <Container map>
+      <Container>
         <Link smooth offset={-250} to={"container"}>
-          {wait ? (
             <ImageMapper
-              src={map}
-              map={coords}
+              map={MAP}
+              src={URL}
               fillColor={"rgba(35,91,78)"}
               strokeColor={"rgba(0,0,0)"}
               onClick={handlerClick}
               onMouseEnter={handleMouseEnter}
               imgWidth={663}
             />
-          ) : <h1>Cargando ...</h1>}
         </Link>
       </Container>
 
