@@ -1,10 +1,11 @@
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
 import ImageMapper from "react-img-mapper";
 import coords from "../data/Coords.json";
 import styled from "styled-components";
 import map from "../assets/images/mapa.webp";
 import ConsejoEstatal from "./ConsejoEstatal";
 import { Link } from "react-scroll";
+import { useEffect } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -15,7 +16,7 @@ const Container = styled.div`
   border-radius: 4px;
 
   @media screen and (min-width: 1024px) {
-    height: ${({ map }) => (map ? "600px" : "500px")};
+    height: 500px;
   }
 `;
 
@@ -33,6 +34,7 @@ const TitleMap = styled.span`
 const Mapper = () => {
   const [state, setState] = useState("");
   const [hover, setHover] = useState("Coloque el cursor en el mapa");
+  const [wait, setWait] = useState(false);
 
   const handlerClick = ({ clave }) => {
     setState(clave);
@@ -42,32 +44,11 @@ const Mapper = () => {
     setHover(name);
   };
 
-  function calculateWidth(width) {
-    switch (width) {
-      case 320:
-        width = width * 0.85;
-        break;
-      case 360:
-        width = width * 0.85;
-        break;
-      case 375:
-        width = width * 0.85;
-        break;
-      case 411:
-        width = width * 0.85;
-        break;
-      case 414:
-        width = width * 0.85;
-        break;
-      case 540:
-        width = width * 0.85;
-        break;
-      default:
-        width = (width / 2) * 0.9;
-        break;
-    }
-    return width;
-  }
+  useEffect(() => {
+    setTimeout(() => {
+      setWait(true);
+    }, 1500);
+  }, []);
 
   return (
     <>
@@ -76,16 +57,17 @@ const Mapper = () => {
       </TitleContainer>
       <Container map>
         <Link smooth offset={-250} to={"container"}>
-          <ImageMapper
-            map={coords}
-            src={map}
-            fillColor={"rgba(35,91,78)"}
-            strokeColor={"rgba(0,0,0)"}
-            onClick={handlerClick}
-            onMouseEnter={handleMouseEnter}
-            imgWidth={663}
-            width={calculateWidth(window.screen.width)}
-          />
+          {wait ? (
+            <ImageMapper
+              src={map}
+              map={coords}
+              fillColor={"rgba(35,91,78)"}
+              strokeColor={"rgba(0,0,0)"}
+              onClick={handlerClick}
+              onMouseEnter={handleMouseEnter}
+              imgWidth={663}
+            />
+          ) : <h1>Cargando ...</h1>}
         </Link>
       </Container>
 
