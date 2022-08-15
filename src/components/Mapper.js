@@ -41,50 +41,25 @@ const Mapper = () => {
     setHover(name);
   };
 
-  function calculateWidth(width) {
-    switch (width) {
-      case 320:
-        width = width * 0.85;
-        break;
-      case 360:
-        width = width * 0.85;
-        break;
-      case 375:
-        width = width * 0.85;
-        break;
-      case 411:
-        width = width * 0.85;
-        break;
-      case 414:
-        width = width * 0.85;
-        break;
-      case 540:
-        width = width * 0.85;
-        break;
-      default:
-        width = (width / 2) * 0.9;
-        break;
-    }
-    return width;
-  }
-
   return (
     <>
       <TitleContainer>
         <TitleMap>{hover}</TitleMap>
       </TitleContainer>
-      <Link smooth offset={-250} to={"container"}>
-        <ImageMapper
-          map={MAP}
-          src={URL}
-          fillColor={"rgba(35,91,78)"}
-          strokeColor={"rgba(0,0,0)"}
-          onClick={handlerClick}
-          onMouseEnter={handleMouseEnter}
-          width={calculateWidth(window.screen.width)}
-          imgWidth={663}
-        />
-      </Link>
+      <Container>
+        <Link smooth offset={-250} to={"container"}>
+          <ImageMapper
+            map={MAP}
+            src={URL}
+            fillColor={"rgba(35,91,78)"}
+            strokeColor={"rgba(0,0,0)"}
+            onClick={handlerClick}
+            onMouseEnter={handleMouseEnter}
+            width={1024}
+            imgWidth={663}
+          />
+        </Link>
+      </Container>
 
       {state ? (
         <Container id={"container"}>
