@@ -31,18 +31,17 @@ const TitleMap = styled.span`
 `;
 
 const Mapper = () => {
-  const ref = useRef(null);
 
   const [state, setState] = useState("");
   const [hover, setHover] = useState("Coloque el cursor en el mapa");
 
 
-  const handlerClick = (e) => {
-    setState(e.clave);
+  const handlerClick = ({ clave }) => {
+    setState(clave);
   };
 
-  const handleMouseEnter = (e) => {
-    setHover(e.name);
+  const handleMouseEnter = ({ name }) => {
+    setHover(name);
   };
 
   return (
@@ -50,7 +49,7 @@ const Mapper = () => {
       <TitleContainer>
         <TitleMap>{hover}</TitleMap>
       </TitleContainer>
-        <Container map ref={ref}>
+        <Container map>
           <Link smooth offset={-250} to={"container"}>
           <ImageMapper
             map={coords}
