@@ -107,7 +107,7 @@ const DoubleBanner = styled.div`
   height: 4rem;
   width: 100%;
   display: grid;
-  grid-template-columns: 30% 45% 20% 5%;
+  grid-template-columns: 25% 50% 20% 5%;
   grid-template-rows: 1;
   grid-template-areas: "title logo back burger";
   align-items: center;
@@ -145,13 +145,16 @@ const Logo = styled.img`
 const MainLogo = styled.img`
   grid-area: title;
   height: 2.5rem;
+  margin-left: 5px;
 
   @media screen and (min-width: 767px) and (max-width: 1024px) {
     height: 3rem;
+  margin-left: 15px;
   }
 
   @media screen and (min-width: 1024px) {
     height: 5.5rem;
+  margin-left: 35px;
   }
 `;
 
