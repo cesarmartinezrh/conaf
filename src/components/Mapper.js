@@ -41,33 +41,37 @@ const Mapper = () => {
     setHover(name);
   };
 
-  return (
-    <>
-      <TitleContainer>
-        <TitleMap>{hover}</TitleMap>
-      </TitleContainer>
-      <Container>
-        <Link smooth offset={-250} to={"container"}>
-          <ImageMapper
-            map={MAP}
-            src={URL}
-            fillColor={"rgba(35,91,78)"}
-            strokeColor={"rgba(0,0,0)"}
-            onClick={handlerClick}
-            onMouseEnter={handleMouseEnter}
-            width={1024}
-            imgWidth={663}
-          />
-        </Link>
-      </Container>
-
-      {state ? (
-        <Container id={"container"}>
-          <ConsejoEstatal clave={state} />
+  if (URL && MAP) {
+    return (
+      <>
+        <TitleContainer>
+          <TitleMap>{hover}</TitleMap>
+        </TitleContainer>
+        <Container>
+          <Link smooth offset={-250} to={"container"}>
+            <ImageMapper
+              map={MAP}
+              src={URL}
+              fillColor={"rgba(35,91,78)"}
+              strokeColor={"rgba(0,0,0)"}
+              onClick={handlerClick}
+              onMouseEnter={handleMouseEnter}
+              width={1024*0.85}
+              imgWidth={663}
+            />
+          </Link>
         </Container>
-      ) : null}
-    </>
-  );
+
+        {state ? (
+          <Container id={"container"}>
+            <ConsejoEstatal clave={state} />
+          </Container>
+        ) : null}
+      </>
+    );
+  } else {
+    <h1>Cargando..</h1>;
+  }
 };
 
 export default Mapper;
