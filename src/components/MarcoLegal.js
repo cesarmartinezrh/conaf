@@ -60,7 +60,7 @@ const MarcoLegal = () => {
       <Text>
         El Consejo Nacional Forestal{" "}
         <Bold>
-          se sustenta en el artículo 152 y 153 de la{" "}
+          se sustenta en los artículos 152 y 153 de la{" "}
           <Link href={"https://www.diputados.gob.mx/LeyesBiblio/ref/lgdfs.htm"}>
             Ley General de Desarrollo Forestal Sustentable.
           </Link>

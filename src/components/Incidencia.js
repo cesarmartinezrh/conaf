@@ -111,10 +111,10 @@ const Incidencia = () => {
           "http://dof.gob.mx/nota_detalle.php?codigo=5493639&fecha=11/08/2017"
         }
       >
-        Disposición general Cuarta, inciso 9 y Décimo primero de los
-        Lineamientos para el impulso, conformación, organización y
-        funcionamiento de los mecanismos de participación ciudadana en las
-        dependencias y entidades de la Administración Pública Federal
+        Lineamientos Cuarto, fracción IX y Décimo primero de los Lineamientos
+        para el impulso, conformación, organización y funcionamiento de los
+        mecanismos de participación ciudadana en las dependencias y entidades de
+        la Administración Pública Federal
       </Reference>
     </>
   );

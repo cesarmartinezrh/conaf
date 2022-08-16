@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Banner from "./components/Banner";
 import News from "./components/News";
+import ScrollButton from "./components/ScrollButton";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Outlet />
       </Container>
       <Footer />
+      <ScrollButton />
     </>
   );
 };

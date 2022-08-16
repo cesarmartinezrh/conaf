@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Separator from "../components/Separator";
 import Reference from "../components/Reference";
+import IndiceReglamento from "../components/IndiceReglamento";
 
 const Tabla = styled.table`
   width: 100%;
@@ -98,7 +99,7 @@ const Text = styled.p`
 `;
 const Subtitle = styled.h2`
   color: #fff;
-  background-color: ${({Ley}) => Ley ? 'var(--dark-green)' : 'var(--wine)'};
+  background-color: ${({ Ley }) => (Ley ? "var(--dark-green)" : "var(--wine)")};
   border-radius: 0 20px 0 20px;
   padding-left: 15px;
 `;
@@ -116,15 +117,15 @@ const Bold = styled.span`
 const Separador = styled.hr`
   border: none;
   margin: 10px 0 40px;
-`
+`;
 
 const Regulation = () => {
   return (
     <>
       <Title>Marco Legal</Title>
       <Separator />
-      <Subtitle Ley>Ley General de Desarrollo Forestal Sustentable</Subtitle>
-      <SubTitle>Artículo 152</SubTitle>
+      <Subtitle name="ley" Ley>Ley General de Desarrollo Forestal Sustentable</Subtitle>
+      <SubTitle name="art152">Artículo 152</SubTitle>
       <Text>
         Se crea el Consejo Nacional Forestal, como órgano de carácter consultivo
         y de asesoramiento, en las materias que le señale esta Ley y en las que
@@ -140,7 +141,7 @@ const Regulation = () => {
         nombrará a un Secretario Técnico, mismo que contará con un suplente que
         será designado por el titular de la Secretaría.
       </Text>
-      <SubTitle>Artículo 153</SubTitle>
+      <SubTitle name="art153">Artículo 153</SubTitle>
       <Text>
         La Secretaría y la Comisión, junto con los gobiernos de las Entidades
         Federativas, integrarán los Consejos Estatales Forestales, mismos que
@@ -161,6 +162,7 @@ const Regulation = () => {
         previstos en las leyes correspondientes.
       </Text>
       <Separador />
+        <IndiceReglamento />
       <Subtitle>Reglamento del Consejo Nacional Forestal</Subtitle>
       <Text>
         Aprobado en la 51ª Sesión Ordinaria del Consejo Nacional Forestal el 25
@@ -297,7 +299,7 @@ const Regulation = () => {
         aplicación de los criterios e instrumentos de política forestal
         establecidos en la Ley.
       </Text>
-      <SubTitle name="cap2">
+      <SubTitle name={"cap2"}>
         Capítulo II. De las Atribuciones del Consejo
       </SubTitle>
       <Text>
@@ -420,8 +422,8 @@ const Regulation = () => {
       </Text>
       <Text>
         El Consejo tendrá como invitado permanente a una persona representante
-        del Instituto Nacional de las Mujeres, quien tendrá derecho de voz en las
-        sesiones del Consejo.
+        del Instituto Nacional de las Mujeres, quien tendrá derecho de voz en
+        las sesiones del Consejo.
       </Text>
       <Text>
         <Bold name={"art6"}>Artículo 6.</Bold> El Presidente emitirá la
@@ -1114,9 +1116,9 @@ const Regulation = () => {
         apoyo a la Secretaría Técnica.
       </Text>
       <Text>
-        <Bold name={"art32"}>Artículo 32.</Bold> Los Consejeros de
-        cada Representación entregarán por escrito ante la Secretaría Técnica
-        los nombres del Representante y su suplente ante cada Comité.
+        <Bold name={"art32"}>Artículo 32.</Bold> Los Consejeros de cada
+        Representación entregarán por escrito ante la Secretaría Técnica los
+        nombres del Representante y su suplente ante cada Comité.
       </Text>
       <Text>
         Los Representantes titulares ante Comités Técnicos durarán en su encargo
@@ -1519,9 +1521,11 @@ const Regulation = () => {
       <Text style={{ textAlign: "center" }}>
         Ciudad de México a 25 de noviembre de 2019
       </Text>
-      <Reference>Firmado al calce por el Presidente Suplente y Secretario Técnico del Consejo Nacional Forestal</Reference>
+      <Reference>
+        Firmado al calce por el Presidente Suplente y Secretario Técnico del
+        Consejo Nacional Forestal
+      </Reference>
       <Reference>Fin del documento</Reference>
-
     </>
   );
 };
