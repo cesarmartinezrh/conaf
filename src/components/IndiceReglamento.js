@@ -45,8 +45,13 @@ const StyledSecond = styled.div`
   display: grid;
   color: white;
   font-weight: 600;
-  grid-template-columns: repeat(18,1fr);
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: auto;
   gap: 5px;
+
+  @media screen and (min-width: 1024px){
+  grid-template-columns: repeat(18,1fr);
+  }
 `;
 
 const SecondLink = styled(Link)` 
