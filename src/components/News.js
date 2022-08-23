@@ -7,7 +7,6 @@ const Container = styled(Marquee)`
   border-top: 1px solid var(--grey);
 `;
 
-
 const Tag = styled.div`
   background-color: var(--wine);
   color: #fff;
@@ -46,7 +45,7 @@ const News = () => {
           rel={"noopener"}
           target={"_blank"}
         >
-          Próxima Sesión del Consejo Nacional Forestal: 18 de Agosto de 2022
+          Próxima Sesión del Consejo Nacional Forestal: 24 de noviembre de 2022
         </Anchor>
         <Separador>|</Separador>
         <Anchor
