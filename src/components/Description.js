@@ -57,7 +57,7 @@ const Index = () => {
       <Wrapper>
         <Description>
           Es un
-          <strong>órgano de carácter consultivo y de asesoramiento</strong> en
+          <strong> órgano de carácter consultivo y de asesoramiento</strong> en
           las materias que le señala la Ley General de Desarrollo Forestal
           Sustentable y en las que se le solicite su opinión. Funge como órgano
           de asesoría, supervisión, vigilancia, evaluación y seguimiento en la
