@@ -1,7 +1,7 @@
-import styled from "styled-components";
 import { NavLink, Outlet } from "react-router-dom";
 import Separator from "../components/Separator";
 import comites from "../data/Comites.json";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   width: 100%;

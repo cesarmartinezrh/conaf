@@ -39,7 +39,27 @@
         "name": "61ª Sesión Ordinaria",
         "date": "26 de mayo",
         "convocatory": "/documents/actas-conaf/CONAF61/convocatoria.pdf",
-        "folder": "/documents/actas-conaf/CONAF61/carpeta.pdf"
+        "folder": "/documents/actas-conaf/CONAF61/carpeta.pdf",
+        "certificate": "/documents/actas-conaf/CONAF61/acta.pdf" 
+      },
+      {
+        "name": "31ª Sesión Extraordinaria",
+        "date": "16 de junio",
+        "convocatory": "/documents/actas-conaf/CONAF31/convocatoria.pdf",
+        "folder": "/documents/actas-conaf/CONAF31/carpeta.pdf",
+        "certificate": "/documents/actas-conaf/CONAF31/acta.pdf" 
+      },
+      {
+        "name": "62ª Sesión Ordinaria",
+        "date": "18 de agosto",
+        "convocatory": "/documents/actas-conaf/CONAF62/convocatoria.pdf",
+        "folder": "/documents/actas-conaf/CONAF62/carpeta.pdf"
+      },
+      {
+        "name": "32ª Sesión Extraordinaria",
+        "date": "10 de octubre",
+        "convocatory": "/documents/actas-conaf/CONAF32/convocatoria.pdf",
+        "folder": "/documents/actas-conaf/CONAF32/carpeta.pdf"
       }
     ]
   },
