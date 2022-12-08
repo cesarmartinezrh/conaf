@@ -8,7 +8,7 @@ import ConsejosEstatales from "./ConsejosEstatales";
 import Error404 from "./Error404";
 import Integracion from "./Integracion";
 import Funciones from "./Funciones";
-import Survey from "./Survey";
+import Encuesta from "./Encuesta";
 import Comites from "./ComitesTecnicos";
 import ComiteHome from "../components/ComiteHome";
 import ComiteTecnico from "../components/ComiteTecnico";
@@ -25,7 +25,7 @@ const PageRoutes = () => {
           <Route path="sesiones" element={<Sesions />} />
           <Route path="funciones" element={<Funciones />} />
           <Route path="consejos-estatales" element={<ConsejosEstatales />} />
-          <Route path="encuesta" element={<Survey />} />
+          <Route path="encuesta" element={<Encuesta />} />
           <Route path="comites-tecnicos" element={<Comites />}>
             <Route index element={<ComiteHome />} />
             <Route path=":comiteId" element={<ComiteTecnico />} />
