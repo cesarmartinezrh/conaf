@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import * as Yup from "yup";
 import Title from "../components/Title";
 import Separator from "../components/Separator";
 import { TextField } from "../components/TextField";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
+import CheckboxInput from "../components/CheckboxInput";
+import RadioInput from "../components/RadioInput";
+import Questions from "../data/Questions.json";
 
 const Container = styled.div`
   width: 100%;
@@ -19,25 +23,10 @@ const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   margin: 10px 0;
-`;
-
-const Label = styled.label`
-  margin-bottom: 10px;
-  font-weight: 600;
-  max-width: 100%;
-  cursor: default;
-  font-size: 18px;
-`;
-
-const Input = styled(Field)`
-  width: 100%;
-  height: 39px;
-  font-size: 18px;
-  padding: 6px 12px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  :first-child {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+  }
 `;
 
 const Button = styled.button`
@@ -57,7 +46,33 @@ const Button = styled.button`
   }
 `;
 
+const RadioQuestion = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const Label = styled.label`
+  margin: 30px 0 10px;
+  font-weight: 500;
+  max-width: 100%;
+  cursor: default;
+  font-size: 18px;
+  align-text: justify;
+`;
+
+const QuestionContainer = styled.div`
+  display:flex;
+  flex-direction: column;
+`
+
+const FormSchema = Yup.object().shape({
+  nombre: Yup.string()
+    .min(2, "Ingresar un nombre correcto")
+    .max(50, "Ingrese un nombre correcto"),
+});
+
 const Encuesta = () => {
+  const ID = 12345
   return (
     <>
       <Title isHeader>Encuesta para el mecanismo Consejos Consultivos</Title>
@@ -65,44 +80,49 @@ const Encuesta = () => {
       <Container>
         <Formik
           initialValues={{
-            id: "",
-            lastname: "",
-            email: "",
-            prueba: ""
+            nombre: "",
+            edad: "",
+            terminos: "",
+            sexo: "",
           }}
-          validate={""}
+          validationSchema={FormSchema}
           onSubmit={(values) => console.log(values)}
         >
           <Form>
             <FormGroup>
-              <TextField label={'Prueba'} type={'text'} name={'prueba'}/>
-              <Label>
-                ID
-                <Input name="id" type="text" />
-                <ErrorMessage name="id" />
-              </Label>
-              <Label>
-                Sexo
-                <Input name="sexo" as="select">
-                  <option value="">Seleccione</option>
-                  <option value="mujer">Mujer</option>
-                  <option value="hombre">Hombre</option>
-                  <option value="otro">Otro</option>
-                </Input>
-                <ErrorMessage name="id" />
-              </Label>
-              <Label>
-                LastName
-                <Input name="lastname" type="text" />
-                <ErrorMessage name="lastname" />
-              </Label>
-              <Label>
-                E-mail
-                <Input name="email" type="email" />
-                <ErrorMessage name="email" />
-              </Label>
+              <Title>Datos personales</Title>
+              <Label>ID</Label>
+              <p>{ID}</p>
+              <TextField
+                label={"Nombre (Opcional)"}
+                type={"text"}
+                name={"nombre"}
+              />
+              <TextField label={"Edad"} type={"text"} name={"edad"} />
+              <Label>Sexo</Label>
+              <RadioQuestion>
+                <RadioInput name={"sexo"} value={"hombre"} label={"Hombre"} />
+                <RadioInput name={"sexo"} value={"mujer"} label={"Mujer"} />
+                <RadioInput name={"sexo"} value={"otro"} label={"Otro"} />
+              </RadioQuestion>
             </FormGroup>
-            <Button type="submit">Send</Button>
+            <FormGroup>
+              <Title>Reactivos</Title>
+              {Questions.map((question) => (
+                <QuestionContainer key={question.id}>
+                  <Label>{`${question.id}. `}{question.question}</Label>
+                  <RadioQuestion>
+                    <RadioInput name={question.id} value={"si"} label={"Si"} />
+                    <RadioInput name={question.id} value={"no"} label={"No"} />
+                  </RadioQuestion>
+                </QuestionContainer>
+              ))}
+              <CheckboxInput
+                name={"terminos"}
+                label={"Terminos y condiciones"}
+              />
+            </FormGroup>
+            <Button type="submit">Terminar</Button>
           </Form>
         </Formik>
       </Container>

@@ -14,21 +14,22 @@ const Input = styled(Field)`
   height: 39px;
   font-size: 18px;
   padding: 6px 12px;
+  margin-bottom: 10px;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid ${({error }) => error ? 'red' : '#ccc'};
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
 `;
 
-export const TextField = ({ label,...props }) => {
+export const TextField = ({ label, ...props }) => {
   const [field, meta] = useField(props);
-  console.log({field, meta});
   return (
     <div>
       <Label>
         {label}
-        <Input {...field} />
+        <Input error={meta.error} touched={meta.touched} {...field} />
       </Label>
+      {meta.touched && meta.error ? <div>{meta.error}</div> : null}
     </div>
   );
 };
