@@ -1,7 +1,9 @@
 [
   {
     "id": 1,
-    "question": "¿Le solicitaron algún tipo de gratificación para participar en esta sesión de Consejo Consultivo?"
+    "question": "¿Le solicitaron algún tipo de gratificación para participar en esta sesión de Consejo Consultivo?",
+    "mide": "Honestidad",
+    "tipo": "Objetivo"
   },
   {
     "id": 2,

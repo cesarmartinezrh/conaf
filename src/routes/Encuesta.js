@@ -4,7 +4,6 @@ import Title from "../components/Title";
 import Separator from "../components/Separator";
 import { TextField } from "../components/TextField";
 import { Formik, Form } from "formik";
-import CheckboxInput from "../components/CheckboxInput";
 import RadioInput from "../components/RadioInput";
 import Questions from "../data/Questions.json";
 
@@ -53,11 +52,10 @@ const RadioQuestion = styled.div`
 
 const Label = styled.label`
   margin: 30px 0 10px;
-  font-weight: 500;
+  font-weight: 600;
   max-width: 100%;
   cursor: default;
   font-size: 18px;
-  align-text: justify;
 `;
 
 const QuestionContainer = styled.div`
@@ -65,10 +63,52 @@ const QuestionContainer = styled.div`
   flex-direction: column;
 `;
 
+const Error = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: red;
+  margin-top: 5px;
+  padding: 5px;
+  background: #ffeae9;
+  font-weight: 600;
+  border-radius: 5px;
+`;
+
 const FormSchema = Yup.object().shape({
   nombre: Yup.string()
     .min(2, "Ingresar un nombre correcto")
     .max(50, "Ingrese un nombre correcto"),
+  edad: Yup.number()
+    .required("Debe ingresar un valor")
+    .positive("Edad tiene que ser un número positivo")
+    .integer("Edad tiene que ser número entero")
+    .typeError("Debe ingresar números enteros"),
+  genero: Yup.string().required("Debe elegir una opción"),
+  descgenero: Yup.string().required(
+    "Ingrese el género con el que se identifica"
+  ),
+  discapacidad: Yup.string().required("Debe elegir una opción"),
+  descdiscapacidad: Yup.string().required(
+    "Ingrese la discapacidad con la que cuenta"
+  ),
+  lenguaindigena: Yup.string().required("Debe elegir una opción"),
+  desclengua: Yup.string().required("Ingrese la(s) lengua(s) que habla"),
+  q1: Yup.string().required(),
+  q2: Yup.string().required(),
+  q3: Yup.string().required(),
+  q4: Yup.string().required(),
+  q5: Yup.string().required(),
+  q6: Yup.string().required(),
+  q7: Yup.string().required(),
+  q8: Yup.string().required(),
+  q9: Yup.string().required(),
+  q10: Yup.string().required(),
+  q11: Yup.string().required(),
+  q12: Yup.string().required(),
+  q13: Yup.string().required(),
+  q14: Yup.string().required(),
+  q15: Yup.string().required(),
 });
 
 const Encuesta = () => {
@@ -81,15 +121,35 @@ const Encuesta = () => {
           initialValues={{
             nombre: "",
             edad: "",
-            terminos: "",
-            sexo: "",
+            genero: "",
+            descgenero: "",
+            discapacidad: "",
+            descdiscapacidad: "",
+            lenguaindigena: "",
+            desclengua: "",
+            q1: "",
+            q2: "",
+            q3: "",
+            q4: "",
+            q5: "",
+            q6: "",
+            q7: "",
+            q8: "",
+            q9: "",
+            q10: "",
+            q11: "",
+            q12: "",
+            q13: "",
+            q14: "",
+            q15: "",
           }}
           validationSchema={FormSchema}
-          onSubmit={(values, {resetForm}) => {
+          onSubmit={(values, { resetForm }) => {
             console.log(values);
-            resetForm()
+            resetForm();
           }}
         >
+          {({ values, errors, touched }) => (
             <Form>
               <FormGroup>
                 <Title>Datos personales</Title>
@@ -99,12 +159,66 @@ const Encuesta = () => {
                   name={"nombre"}
                 />
                 <TextField label={"Edad"} type={"text"} name={"edad"} />
-                <Label>Sexo</Label>
+                <Label>Género</Label>
                 <RadioQuestion>
-                  <RadioInput name={"sexo"} value={"hombre"} label={"Hombre"} />
-                  <RadioInput name={"sexo"} value={"mujer"} label={"Mujer"} />
-                  <RadioInput name={"sexo"} value={"otro"} label={"Otro"} />
+                  <RadioInput
+                    name={"genero"}
+                    value={"masculino"}
+                    label={"Masculino"}
+                  />
+                  <RadioInput
+                    name={"genero"}
+                    value={"femenino"}
+                    label={"Femenino"}
+                  />
+                  <RadioInput name={"genero"} value={"otro"} label={"Otro"} />
                 </RadioQuestion>
+                {errors.genero && <Error>{errors.genero}</Error>}
+                {values.genero === "otro" && (
+                  <TextField
+                    label={"¿Cuál?"}
+                    type="text"
+                    name={"descgenero"}
+                  ></TextField>
+                )}
+                <Label>Tiene alguna discapacidad?</Label>
+                <RadioQuestion>
+                  <RadioInput name={"discapacidad"} value={"si"} label={"Si"} />
+                  <RadioInput name={"discapacidad"} value={"no"} label={"No"} />
+                </RadioQuestion>
+                {values.discapacidad === "si" && (
+                  <TextField
+                    label={"¿Cuál?"}
+                    type="text"
+                    name={"descdiscapacidad"}
+                  ></TextField>
+                )}
+
+                {errors.discapacidad && <Error>{errors.discapacidad}</Error>}
+                <Label>Habla usted alguna lengua indígena?</Label>
+                <RadioQuestion>
+                  <RadioInput
+                    name={"lenguaindigena"}
+                    value={"si"}
+                    label={"Si"}
+                  />
+                  <RadioInput
+                    name={"lenguaindigena"}
+                    value={"no"}
+                    label={"No"}
+                  />
+                </RadioQuestion>
+
+                {errors.lenguaindigena && (
+                  <Error>{errors.lenguaindigena}</Error>
+                )}
+                {values.lenguaindigena === "si" && (
+                  <TextField
+                    label={"¿Cuál?"}
+                    type="text"
+                    name={"desclengua"}
+                  ></TextField>
+                )}
               </FormGroup>
               <FormGroup>
                 <Title>Reactivos</Title>
@@ -116,25 +230,25 @@ const Encuesta = () => {
                     </Label>
                     <RadioQuestion>
                       <RadioInput
-                        name={question.id}
+                        name={`q${question.id}`}
                         value={"si"}
                         label={"Si"}
                       />
                       <RadioInput
-                        name={question.id}
+                        name={`q${question.id}`}
                         value={"no"}
                         label={"No"}
                       />
                     </RadioQuestion>
                   </QuestionContainer>
                 ))}
-                <CheckboxInput
-                  name={"terminos"}
-                  label={"Terminos y condiciones"}
-                />
               </FormGroup>
+              {Object.keys(errors).length > 0 ? (
+                <Error>Existen errores o preguntas por contestar.</Error>
+              ) : null}
               <Button type="submit">Terminar</Button>
             </Form>
+          )}
         </Formik>
       </Container>
     </>
