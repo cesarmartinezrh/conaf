@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import * as Yup from "yup";
+import axios from "axios";
 import Title from "../components/Title";
 import Separator from "../components/Separator";
 import { TextField } from "../components/TextField";
@@ -75,6 +76,43 @@ const Error = styled.div`
   border-radius: 5px;
 `;
 
+const insertHandler = async (values, { setSubmitting }) => {
+  const formData = {
+    id: values.id,
+    nombre: values.nombre,
+    edad: values.edad,
+    genero: values.genero,
+    descgenero: values.descgenero,
+    discapacidad: values.discapacidad,
+    descdiscapacidad: values.descdiscapacidad,
+    lenguaindigena: values.lenguaindigena,
+    desclengua: values.desclengua,
+    q1: values.q1,
+    q2: values.q2,
+    q3: values.q3,
+    q4: values.q4,
+    q5: values.q5,
+    q6: values.q6,
+    q7: values.q7,
+    q8: values.q8,
+    q9: values.q9,
+    q10: values.q10,
+    q11: values.q10,
+    q12: values.q12,
+    q13: values.q13,
+    q14: values.q14,
+    q15: values.q15,
+  };
+  try {
+    const response = await axios.post("/survey", formData);
+    console.log(response.data);
+  } catch (e) {
+    console.log(e);
+  } finally {
+    setSubmitting(false);
+  }
+};
+
 const FormSchema = Yup.object().shape({
   nombre: Yup.string()
     .min(2, "Ingresar un nombre correcto")
@@ -85,15 +123,11 @@ const FormSchema = Yup.object().shape({
     .integer("Edad tiene que ser número entero")
     .typeError("Debe ingresar números enteros"),
   genero: Yup.string().required("Debe elegir una opción"),
-  descgenero: Yup.string().required(
-    "Ingrese el género con el que se identifica"
-  ),
+  descgenero: Yup.string(),
   discapacidad: Yup.string().required("Debe elegir una opción"),
-  descdiscapacidad: Yup.string().required(
-    "Ingrese la discapacidad con la que cuenta"
-  ),
+  descdiscapacidad: Yup.string(),
   lenguaindigena: Yup.string().required("Debe elegir una opción"),
-  desclengua: Yup.string().required("Ingrese la(s) lengua(s) que habla"),
+  desclengua: Yup.string(),
   q1: Yup.string().required(),
   q2: Yup.string().required(),
   q3: Yup.string().required(),
@@ -119,6 +153,7 @@ const Encuesta = () => {
       <Container>
         <Formik
           initialValues={{
+            id: "",
             nombre: "",
             edad: "",
             genero: "",
@@ -144,12 +179,9 @@ const Encuesta = () => {
             q15: "",
           }}
           validationSchema={FormSchema}
-          onSubmit={(values, { resetForm }) => {
-            console.log(values);
-            resetForm();
-          }}
+          onSubmit={insertHandler}
         >
-          {({ values, errors, touched }) => (
+          {({ values, errors }) => (
             <Form>
               <FormGroup>
                 <Title>Datos personales</Title>
