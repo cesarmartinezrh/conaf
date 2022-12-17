@@ -1,10 +1,10 @@
 const { createPool } = require('mysql2');
 const pool = createPool({
-  host     : 'pirul.conafor.gob.mx',
-  user     : 'participacionsocial',
-  password : 'w%n6%O63eq40',
-  database : 'participacionsocial',
-  port: 3306
+  host     : process.env.HOST,
+  user     : process.env.USER,
+  password : process.env.PASSWORD,
+  database : process.env.DATABASE,
+  port: process.env.DATABASEPORT 
 });
 
-module.exports = pool 
+module.exports = pool; 

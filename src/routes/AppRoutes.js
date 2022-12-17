@@ -25,7 +25,7 @@ const PageRoutes = () => {
           <Route path="sesiones" element={<Sesions />} />
           <Route path="funciones" element={<Funciones />} />
           <Route path="consejos-estatales" element={<ConsejosEstatales />} />
-          <Route path="encuesta" element={<Encuesta />} />
+          <Route path="encuesta/:id" element={<Encuesta />}/>
           <Route path="comites-tecnicos" element={<Comites />}>
             <Route index element={<ComiteHome />} />
             <Route path=":comiteId" element={<ComiteTecnico />} />

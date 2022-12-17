@@ -1,3 +1,4 @@
+import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import * as Yup from "yup";
 import axios from "axios";
@@ -76,7 +77,16 @@ const Error = styled.div`
   border-radius: 5px;
 `;
 
-const insertHandler = async (values, { setSubmitting }) => {
+const IDContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  padding: 20px 0;
+    `
+
+const insertHandler = async (values, { resetForm}) => {
   const formData = {
     id: values.id,
     nombre: values.nombre,
@@ -105,11 +115,9 @@ const insertHandler = async (values, { setSubmitting }) => {
   };
   try {
     const response = await axios.post("/survey", formData);
-    console.log(response.data);
   } catch (e) {
-    console.log(e);
   } finally {
-    setSubmitting(false);
+    resetForm()
   }
 };
 
@@ -146,6 +154,8 @@ const FormSchema = Yup.object().shape({
 });
 
 const Encuesta = () => {
+  const { id }= useParams();
+  const navigate = useNavigate()
   return (
     <>
       <Title isHeader>Encuesta para el mecanismo Consejos Consultivos</Title>
@@ -153,7 +163,7 @@ const Encuesta = () => {
       <Container>
         <Formik
           initialValues={{
-            id: "",
+            id,
             nombre: "",
             edad: "",
             genero: "",
@@ -185,6 +195,8 @@ const Encuesta = () => {
             <Form>
               <FormGroup>
                 <Title>Datos personales</Title>
+                <IDContainer><p>ID</p>{id}</IDContainer> 
+                
                 <TextField
                   label={"Nombre (Opcional)"}
                   type={"text"}
@@ -278,7 +290,9 @@ const Encuesta = () => {
               {Object.keys(errors).length > 0 ? (
                 <Error>Existen errores o preguntas por contestar.</Error>
               ) : null}
-              <Button type="submit">Terminar</Button>
+              <Button type="submit" onClick={() => setTimeout(()=> {
+                  navigate('/')
+              },1000)}>Terminar</Button>
             </Form>
           )}
         </Formik>
